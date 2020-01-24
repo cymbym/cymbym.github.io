@@ -37,7 +37,7 @@
 </li>
 <li><p><strong>修改theme/next目录下_config.yml文档中local_search的配置</strong>  </p>
 <pre><code># Local search
-  local_search:
+local_search:
   enable: true
 </code></pre>
 
@@ -58,7 +58,7 @@
 </li>
 </ul>
 <h2 id="修改与发布"><a href="#修改与发布" class="headerlink" title="修改与发布"></a>修改与发布</h2><ul>
-<li><strong>清空缓存</strong><br><code>hexo clean</code>  </li>
+<li><strong>清空缓存</strong><br><code>hexo clean</code>/<code>hexo cl</code>  </li>
 <li><strong>生成静态文件</strong><br><code>hexo generate</code>/<code>hexo g</code></li>
 <li><strong>启动服务器，本地预览博客效果</strong><br><code>hexo server</code>/<code>hexo s</code><br>在 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 中访问。</li>
 </ul>
