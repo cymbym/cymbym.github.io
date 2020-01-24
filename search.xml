@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>【Hexo】Hexo+github搭建github博客</title>
+    <url>/2020/01/22/%E3%80%90Hexo%E3%80%91Hexo-github%E6%90%AD%E5%BB%BAgithub%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><p>Hexo是一个快速、简洁且高效的博客框架。Hexo使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。方便部署到github上搭建博客。  </p>
+<a id="more"></a>
+
+<h1 id="创建个人博客"><a href="#创建个人博客" class="headerlink" title="创建个人博客"></a>创建个人博客</h1><h2 id="在gitHub上new一个repository"><a href="#在gitHub上new一个repository" class="headerlink" title="在gitHub上new一个repository"></a>在gitHub上new一个repository</h2><img src="/2020/01/22/%E3%80%90Hexo%E3%80%91Hexo-github%E6%90%AD%E5%BB%BAgithub%E5%8D%9A%E5%AE%A2/pasted-0.png" class title="This is an test image">
+
+<h2 id="git-clone将创建的repository到本地"><a href="#git-clone将创建的repository到本地" class="headerlink" title="git clone将创建的repository到本地"></a>git clone将创建的repository到本地</h2><h1 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h1><h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><ul>
+<li><strong><a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">官网下载</a></strong>  </li>
+<li><strong>配置环境变量：</strong><br>系统变量<code>NODE_PATH</code>，即压缩后的路径，如，<code>D:\NodeJS</code>。<br>系统变量<code>PATH</code>，新增，<code>%NODE_PATH%</code>。  </li>
+<li><strong>检测node.js和npm是否安装成功</strong>：<br>输入<code>node -v</code>和<code>npm -v</code>。  </li>
+</ul>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><ul>
+<li><strong>下载</strong><br>自定义路径，如，<code>D:\hexo</code> 中打开<code>git bash</code>，输入<code>npm install -g hexo-cli</code>。<br>注：cmd中没有成功。</li>
+<li><strong>配置环境变量：</strong><br>系统变量<code>PATH</code>，新增，如，<code>D:\hexo\node_modules\.bin</code>。    </li>
+<li><strong>检测hexo是否安装成功</strong>：<br>输入<code>hexo -v</code>。  </li>
+</ul>
+<h1 id="搭建本地博客"><a href="#搭建本地博客" class="headerlink" title="搭建本地博客"></a>搭建本地博客</h1><h2 id="初始化博客框架"><a href="#初始化博客框架" class="headerlink" title="初始化博客框架"></a>初始化博客框架</h2><p>在<code>E:\cymbym.github.io</code>目录下，输入<code>hexo init</code>，会自动生成本地文件。</p>
+<h2 id="基础设置"><a href="#基础设置" class="headerlink" title="基础设置"></a>基础设置</h2><ul>
+<li><strong>设置站点名、作者昵称和站点描述等</strong><br>打开根目录下的<code>_config.yml</code>修改即可。</li>
+<li><strong>NexT主题的安装</strong><br>根目录下输入<code>git clone https://github.com/theme-next/hexo-theme-next themes/next</code>即可。</li>
+<li><strong>NexT主题的安装</strong><br>根目录下的<code>_config.yml</code>,查找<code>theme</code>字段，将字段改为<code>theme: next</code>。<a href="https://blog.csdn.net/weixin_39345384/article/details/80785373" target="_blank" rel="noopener">更多可参考</a>。 </li>
+</ul>
+<h2 id="将网站部署到个人的GitHub-Pages上"><a href="#将网站部署到个人的GitHub-Pages上" class="headerlink" title="将网站部署到个人的GitHub Pages上"></a>将网站部署到个人的GitHub Pages上</h2><ul>
+<li><strong>安装hexo-deployer-git</strong><br>项目根目录下输入<code>npm install hexo-deployer-git --save</code>  </li>
+<li><strong>修改根目录_config.yml文档中deploy的配置</strong><br>文档末输入 :<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https:&#x2F;&#x2F;github.com&#x2F;cymbym&#x2F;cymbym.github.io</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></li>
+<li><strong>将本地的静态网页部署到服务器上</strong><br><code>hexo deploy</code>/<code>hexo d</code></li>
+</ul>
+<h2 id="修改与发布"><a href="#修改与发布" class="headerlink" title="修改与发布"></a>修改与发布</h2><ul>
+<li><strong>清空缓存</strong><br><code>hexo clean</code>  </li>
+<li><strong>生成静态文件</strong><br><code>hexo generate</code>/<code>hexo g</code></li>
+<li><strong>启动服务器，本地预览博客效果</strong><br><code>hexo server</code>/<code>hexo s</code><br>在 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 中访问。</li>
+</ul>
+<h1 id="写博文"><a href="#写博文" class="headerlink" title="写博文"></a>写博文</h1><h2 id="原始方法"><a href="#原始方法" class="headerlink" title="原始方法"></a>原始方法</h2><ul>
+<li><strong>创建新博文</strong><br><code>hexo new &lt;title&gt;</code><br>后，<code>source/_posts</code>目录下会生成相应的.md文件，接下来我们可以编辑该文件。  </li>
+<li><strong>关于在博文中插入图片</strong><br>可以把图片统一放置在<code>source/images</code>目录下，然后在使用时用下述方式引用：  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![](&#x2F;images&#x2F;image.jpg)  </span><br><span class="line">&#96;&#96;&#96;   </span><br><span class="line">后续介绍其他方法。  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">安装hexo-admin插件编辑博文</span><br><span class="line">-----------------</span><br><span class="line">* **安装插件**   </span><br><span class="line">项目根目录下输入&#96;npm install --save hexo-admin&#96;</span><br><span class="line">* **启动服务器**   </span><br><span class="line">&#96;hexo server -d&#96;  </span><br><span class="line">在 &lt;http:&#x2F;&#x2F;localhost:4000&#x2F;admin&#x2F;&gt; 中访问。</span><br><span class="line">* **修改根目录_config.yml文档中deploy的配置**  </span><br><span class="line">文档末输入 :</span><br><span class="line">&#96;&#96;&#96;&#123;</span><br><span class="line">admin:</span><br><span class="line">  deployCommand: hexo-publish.bat</span><br></pre></td></tr></table></figure></li>
+<li><strong>创建bat文件</strong><br>项目根目录下新建<code>hexo-publish.bat</code>文件，文件内容如下：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure></li>
+<li><strong>关于在博文中插入图片方法（但我失败了）</strong><br>hexo admin可以直接复制图片粘贴，然后自动下载到<code>source/images</code>目录并重命名。但在Windows中粘贴后会出现裂图。这时就需要手动把括号中的前后两个斜杠去掉，就能正常显示，如：</li>
+</ul>
+<img src="/2020/01/22/%E3%80%90Hexo%E3%80%91Hexo-github%E6%90%AD%E5%BB%BAgithub%E5%8D%9A%E5%AE%A2/pasted-2.png" class title="This is an test image">
+
+<ul>
+<li><strong>上传</strong><br>编辑完毕后，就可以点击Deploy。</li>
+</ul>
+<h2 id="安装hexo-asset-image上传图片"><a href="#安装hexo-asset-image上传图片" class="headerlink" title="安装hexo-asset-image上传图片"></a>安装hexo-asset-image上传图片</h2><ul>
+<li><strong>安装插件</strong><br>项目根目录下输入<code>npm install https://github.com/7ym0n/hexo-asset-image --save</code></li>
+<li><strong>修改根目录_config.yml文档中的配置</strong><br>在根目录下配置文件<code>_config.yml</code>中有<code>post_asset_folder:false</code>改为<code>true</code>。</li>
+<li><strong>创建与博文同名文件夹</strong><br>运行<code>hexo new &quot;文章名称&quot;</code>来生成md博文时，<code>/source/_posts</code>文件夹内除了<code>文章名称.md</code>文件还有一个同名的文件夹，把图片放入该文件夹。</li>
+<li><strong>插入图片</strong><br>随后用<code></code>即可插入图片。<br>其中<code>test.jpg</code>就是引用的图片，后面的<code>This is an test image</code>是图片描述。  </li>
+</ul>
+<h1 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h1><p>关于主题的使用，也可以查看其他关于Hexo相关文章。<br><a href="http://wangwlj.com/2017/09/09/blog-opti/" target="_blank" rel="noopener">Hexo搭建的GitHub博客之优化</a><br><a href="https://www.jianshu.com/p/e4db4f7ed45f" target="_blank" rel="noopener">Hexo搭建GitHub博客—打造炫酷的NexT主题–高级(三)</a><br><a href="https://www.jianshu.com/p/e17711e44e00" target="_blank" rel="noopener">Hexo使用攻略-添加分类及标签</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Cymbym</title>
+    <url>/2020/01/21/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://cymbym.github.io/" target="_blank" rel="noopener">Cymbym</a>! </p>
+<h2 id="About-Me"><a href="#About-Me" class="headerlink" title="About Me"></a>About Me</h2><p>XINBIN SHEN received the B.S. degree in communication engineering from the Beijing University of Posts and Telecommunications, China, where he is currently pursuing the M.S. degree in electronic and communication engineering. His current research interests include Wi-Fi sensing, machine learning, and deep learning.</p>
+<h2 id="News"><a href="#News" class="headerlink" title="News"></a>News</h2><p>Jul., 2018: Joined Beijing Key Laboratory of Network System Architecture and Convergence, Beijing University of Posts and Telecommunications. Started doing research on Wi-Fi sensing.<br>Jun., 2018: Graduated from Beijing University of Posts and Telecommunications.</p>
+<h2 id="Publications"><a href="#Publications" class="headerlink" title="Publications"></a>Publications</h2><p>WiRIM: Resolution Improving Mechanism for Human Sensing With Commodity Wi-Fi<br>WiRoI: Spatial Region of Interest Human Sensing with Commodity WiFi</p>
+]]></content>
+  </entry>
+</search>
