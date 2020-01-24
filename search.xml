@@ -30,7 +30,7 @@
 <li><p><strong>增加根目录_config.yml文档中search的配置</strong><br>文档末输入 :</p>
 <pre><code>search:
   path: search.xml
- field: post
+  field: post
   format: html
   limit: 10000
 </code></pre>
