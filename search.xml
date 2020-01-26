@@ -1,6 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【SpringBoot】SpringBoot安装及使用</title>
+    <url>/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="SpringBoot"><a href="#SpringBoot" class="headerlink" title="SpringBoot"></a>SpringBoot</h1><p>SpringBoot创建<font color="#FF0000">独立的Spring</font>应用程序；<font color="#FF0000">简化Maven配置</font>，开箱即用；<font color="#FF0000">内嵌式容器Tomcat</font>简化Web项目，没有冗余代码生成和XML配置的要求。<br>本章主要目标完成SpringBoot基础项目的构建，并且实现一个简单的http请求处理，即<font color="#FF0000">浏览器发送一个hello请求，服务器接收请求并处理，响应一个Hello World字符串</font>。</p>
+<a id="more"></a>
+
+<h1 id="HelloWorld入门"><a href="#HelloWorld入门" class="headerlink" title="HelloWorld入门"></a>HelloWorld入门</h1><h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><ul>
+<li><strong>安装JDK</strong></li>
+<li><strong>安装Maven</strong></li>
+<li><strong>安装IntelliJ IDEA</strong></li>
+</ul>
+<h2 id="使用Spring-Initializr创建SpringBoot项目"><a href="#使用Spring-Initializr创建SpringBoot项目" class="headerlink" title="使用Spring Initializr创建SpringBoot项目"></a>使用Spring Initializr创建SpringBoot项目</h2><ul>
+<li><p><strong>使用Spring Initializr创建</strong><br><img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/%5Cimages%5Cpasted-1.png" alt="upload successful"></p>
+</li>
+<li><p><strong>在Artifact中给项目命名</strong><br><img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/%5Cimages%5Cpasted-4.png" alt="upload successful"></p>
+</li>
+<li><p><strong>选择web项目</strong><br><img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/%5Cimages%5Cpasted-5.png" alt="upload successful"></p>
+</li>
+</ul>
+<p><img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/%5Cimages%5Cpasted-6.png" alt="upload successful"></p>
+<ul>
+<li><p><strong>创建完成</strong><br>点击图中第九行的运行按钮：<br><img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/%5Cimages%5Cpasted-9.png" alt="upload successful"><br>运行成功：<br><img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/%5Cimages%5Cpasted-8.png" alt="upload successful"><br>此时访问<a href="http://localhost:8080/" target="_blank" rel="noopener">http://localhost:8080/</a> ，可以出现文字了：<br><img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/%5Cimages%5Cpasted-10.png" alt="upload successful"></p>
+</li>
+<li><p><strong>运行</strong><br>再次点击图中第九行的运行按钮：<br><img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/%5Cimages%5Cpasted-16.png" alt="upload successful"><br>此时访问<a href="http://localhost:8080/hello" target="_blank" rel="noopener">http://localhost:8080/hello</a> ，可以出现文字了：<br><img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/%5Cimages%5Cpasted-15.png" alt="upload successful"></p>
+</li>
+</ul>
+<h2 id="使用Maven创建SpringBoot项目"><a href="#使用Maven创建SpringBoot项目" class="headerlink" title="使用Maven创建SpringBoot项目"></a>使用Maven创建SpringBoot项目</h2><ul>
+<li><p><strong>使用Maven创建</strong><br><img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/%5Cimages%5Cpasted-18.png" alt="upload successful"></p>
+</li>
+<li><p><strong>导入spring boot相关依赖</strong><br>从Spring官网的<a href="https://spring.io/guides/gs/rest-service/" target="_blank" rel="noopener">guides</a>中复制如下到<code>pom.xml</code>文件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;parent&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-boot-starter-parent&lt;&#x2F;artifactId&gt;</span><br><span class="line">        &lt;version&gt;2.2.2.RELEASE&lt;&#x2F;version&gt;</span><br><span class="line">        &lt;relativePath&#x2F;&gt; &lt;!-- lookup parent from repository --&gt;</span><br><span class="line">    &lt;&#x2F;parent&gt;</span><br><span class="line"></span><br><span class="line">    &lt;dependencies&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-web&lt;&#x2F;artifactId&gt;</span><br><span class="line">        &lt;&#x2F;dependency&gt;</span><br><span class="line">    &lt;&#x2F;dependencies&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/%5Cimages%5Cpasted-19.png" alt="upload successful"></p>
+</li>
+<li><p><strong>编写主程序</strong><br>新建包和主程序：<br><img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/%5Cimages%5Cpasted-20.png" alt="upload successful"><br>主程序用于启动Spring Boot应用：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">  &#x2F;*</span><br><span class="line">    用SpringBootApplication来标注一个主程序类，说明这是一个Spring Boot应用</span><br><span class="line">   *&#x2F;</span><br><span class="line">  @SpringBootApplication</span><br><span class="line">  public class SpringBoot02HelloworldApplication &#123;</span><br><span class="line">      public static void main(String[] args) &#123;</span><br><span class="line">          &#x2F;&#x2F;启动spring应用</span><br><span class="line">          SpringApplication.run(SpringBoot02HelloworldApplication.class, args);</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/%5Cimages%5Cpasted-21.png" alt="upload successful"></p>
+</li>
+<li><p><strong>创建完成</strong><br>点击图中第九行的运行按钮：<br><img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/%5Cimages%5Cpasted-9.png" alt="upload successful"><br>运行成功：<br><img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/%5Cimages%5Cpasted-8.png" alt="upload successful"><br>此时访问<a href="http://localhost:8080/" target="_blank" rel="noopener">http://localhost:8080/</a> ，可以出现文字了：<br><img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/%5Cimages%5Cpasted-10.png" alt="upload successful"></p>
+</li>
+</ul>
+<h2 id="写一个controller查看前后端交互信息"><a href="#写一个controller查看前后端交互信息" class="headerlink" title="写一个controller查看前后端交互信息"></a>写一个controller查看前后端交互信息</h2><ul>
+<li><p><strong>主程序的同级目录中new一个package</strong><br><img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/%5Cimages%5Cpasted-12.png" alt="upload successful">  </p>
+</li>
+<li><p><strong>controller的目录下new一个class</strong><br><img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/%5Cimages%5Cpasted-13.png" alt="upload successful"></p>
+</li>
+<li><p><strong>在类中添加注解方法一</strong><br>为HelloController添加<font color="#FF0000">RestController</font>注解，向SpringBoot说明这是用于响应网络请求的类，其中@RestController就是<font color="#FF0000">@Controller + @ResponseBody </font>注解的综合，后无需再加<font color="#FF0000">ResponseBody </font>；<br>通过<font color="#FF0000">GetMapping/RequestMapping</font>注解，向SpringBoot说明可以响应/hello的Get请求。 </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;*</span><br><span class="line">  通过RestController注解，向SpringBoot说明这是一个响应网络请求的类。</span><br><span class="line"> *&#x2F;</span><br><span class="line">@RestController</span><br><span class="line">public class HelloController &#123;</span><br><span class="line"></span><br><span class="line">    &#x2F;*</span><br><span class="line">      通过GetMapping&#x2F;RequestMapping注解，向SpringBoot说明可以应&#x2F;hello的Get请求。</span><br><span class="line">      由于类使用的RestController就是Controller + ResponseBody，因此返回的无需加@ResponseBody注解。</span><br><span class="line">     *&#x2F;</span><br><span class="line">    @GetMapping(value &#x3D; &quot;&#x2F;hello&quot;)</span><br><span class="line">    public String hello() &#123;</span><br><span class="line">        return &quot;Hello World!!!&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/%5Cimages%5Cpasted-24.png" alt="upload successful"></p>
+</li>
+<li><p><strong>在类中添加注解方法二</strong><br>为HelloController添加<font color="#FF0000">Controller</font>注解，向SpringBoot说明这是用于响应网络请求的类，后<font color="#FF0000">需加ResponseBody</font>；<br>通过<font color="#FF0000">GetMapping/RequestMapping + ResponseBody</font>注解，向SpringBoot说明可以响应/hello的Get请求。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@Controller</span><br><span class="line">public class HelloController &#123;</span><br><span class="line">    @ResponseBody</span><br><span class="line">    @RequestMapping(&quot;&#x2F;hello&quot;)</span><br><span class="line">    public String hello() &#123;</span><br><span class="line">        return &quot;Hello World!!!&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/%5Cimages%5Cpasted-22.png" alt="upload successful">  </p>
+</li>
+</ul>
+<h2 id="将应用打包成一个可执行的jar包"><a href="#将应用打包成一个可执行的jar包" class="headerlink" title="将应用打包成一个可执行的jar包"></a>将应用打包成一个可执行的jar包</h2><ul>
+<li><p><strong>使用maven方法需手动添加插件到pom.xml文件</strong><br>将<a href="https://spring.io/guides/gs/rest-service/" target="_blank" rel="noopener">guides</a>中pom.xml中的相关内容，写入依赖之后：  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;build&gt;</span><br><span class="line">    &lt;plugins&gt;</span><br><span class="line">        &lt;plugin&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-maven-plugin&lt;&#x2F;artifactId&gt;</span><br><span class="line">        &lt;&#x2F;plugin&gt;</span><br><span class="line">    &lt;&#x2F;plugins&gt;</span><br><span class="line">&lt;&#x2F;build&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>在右侧的maven中找到package的位置，双击生成jar包</strong><br><img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/%5Cimages%5Cpasted-26.png" alt="upload successful"><br>若此处报错，注意检查User settings file的路径：<br><img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/%5Cimages%5Cpasted-25.png" alt="upload successful"><br>得到的jar包在target目录下：<br><img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/%5Cimages%5Cpasted-27.png" alt="upload successful"></p>
+</li>
+<li><p><strong>直接执行jar包</strong><br>扔到任意路径下后，在cmd的该路径下，执行<code>java -jar 包名</code>即可运行。<br><img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/%5Cimages%5Cpasted-28.png" alt="upload successful"></p>
+</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
     <title>【Hexo】Hexo+github搭建github博客</title>
     <url>/2020/01/22/%E3%80%90Hexo%E3%80%91Hexo-github%E6%90%AD%E5%BB%BAgithub%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><p>Hexo是一个快速、简洁且高效的博客框架。Hexo使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。方便部署到github上搭建博客。  </p>
