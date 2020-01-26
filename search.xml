@@ -41,9 +41,9 @@ local_search:
   enable: true
 </code></pre>
 
-
 </li>
 </ul>
+<h2 id="设置预览摘要"><a href="#设置预览摘要" class="headerlink" title="设置预览摘要"></a>设置预览摘要</h2><p>只要在文章中加上<code>&lt;!--more--&gt;</code>标记 ，该标记以后部分就不在显示了。  </p>
 <h2 id="将网站部署到个人的GitHub-Pages上"><a href="#将网站部署到个人的GitHub-Pages上" class="headerlink" title="将网站部署到个人的GitHub Pages上"></a>将网站部署到个人的GitHub Pages上</h2><ul>
 <li><p><strong>安装hexo-deployer-git</strong><br>项目根目录下输入<code>npm install hexo-deployer-git --save</code>  </p>
 </li>
