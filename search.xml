@@ -141,6 +141,12 @@ public class HelloController {
 <img src="/2020/01/24/%E3%80%90SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-28.png" class></li>
 </ul>
 ]]></content>
+      <categories>
+        <category>Spring Boot</category>
+      </categories>
+      <tags>
+        <tag>Spring Boot</tag>
+      </tags>
   </entry>
   <entry>
     <title>【Hexo】Hexo+github搭建github博客</title>
@@ -237,6 +243,12 @@ local_search:
 </ul>
 <h1 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h1><p>关于主题的使用，也可以查看其他关于Hexo相关文章。<br><a href="http://wangwlj.com/2017/09/09/blog-opti/" target="_blank" rel="noopener">Hexo搭建的GitHub博客之优化</a><br><a href="https://www.jianshu.com/p/e4db4f7ed45f" target="_blank" rel="noopener">Hexo搭建GitHub博客—打造炫酷的NexT主题–高级(三)</a><br><a href="https://www.jianshu.com/p/e17711e44e00" target="_blank" rel="noopener">Hexo使用攻略-添加分类及标签</a></p>
 ]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title>Cymbym</title>
