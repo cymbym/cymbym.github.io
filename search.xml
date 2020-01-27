@@ -95,7 +95,7 @@ public class SpringBoot02HelloworldApplication {
 <li><p><strong>controller的目录下new一个class</strong>  </p>
 <img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-13.png" class> 
 </li>
-<li><p><strong>在类中添加注解方法一</strong><br>为HelloController添加<font color="#FF0000">RestController</font>注解，向SpringBoot说明这是用于响应网络请求的类，其中@RestController就是<font color="#FF0000">@Controller + @ResponseBody </font>注解的综合，后无需再加<font color="#FF0000">ResponseBody </font>；<br>通过<font color="#FF0000">GetMapping/RequestMapping</font>注解，向SpringBoot说明可以响应/hello的Get请求。 </p>
+<li><p><strong>在类中添加注解方法一</strong><br>为HelloController类添加<font color="#FF0000">RestController</font>注解，向SpringBoot说明这是用于响应网络请求的类，其中@RestController就是<font color="#FF0000">@Controller + @ResponseBody </font>注解的综合，后无需再加<font color="#FF0000">ResponseBody </font>；<br>通过<font color="#FF0000">GetMapping/RequestMapping</font>注解，向SpringBoot说明可以响应/hello的Get请求。 </p>
 <pre><code>
 /*
   通过RestController注解，向SpringBoot说明这是一个响应网络请求的类。
@@ -115,12 +115,12 @@ public class HelloController {
 </code></pre>
 <img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-24.png" class> 
 </li>
-<li><p><strong>在类中添加注解方法二</strong><br>为HelloController添加<font color="#FF0000">Controller</font>注解，向SpringBoot说明这是用于响应网络请求的类，后<font color="#FF0000">需加ResponseBody</font>；<br>通过<font color="#FF0000">GetMapping/RequestMapping + ResponseBody</font>注解，向SpringBoot说明可以响应/hello的Get请求。</p>
+<li><p><strong>在类中添加注解方法二</strong><br>为HelloController类添加<font color="#FF0000">Controller</font>注解，向SpringBoot说明这是用于响应网络请求的类，后<font color="#FF0000">需加ResponseBody</font>；<br>通过<font color="#FF0000">GetMapping/RequestMapping + ResponseBody</font>注解，向SpringBoot说明可以响应/hello的Get请求。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@Controller</span><br><span class="line">public class HelloController &#123;</span><br><span class="line">    @ResponseBody</span><br><span class="line">    @RequestMapping(&quot;&#x2F;hello&quot;)</span><br><span class="line">    public String hello() &#123;</span><br><span class="line">        return &quot;Hello World!!!&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-22.png" class>  
 </li>
-<li><p><strong>运行</strong><br>再次点击图中第七行的运行按钮：<br><img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/%5Cimages%5Cpasted-39.png%5C" alt="upload successful"></p>
-<img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-15.png" class>  
+<li><p><strong>运行</strong><br>再次点击图中第七行的运行按钮： </p>
+<img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-38.png" class>  
 <p>此时访问<a href="http://localhost:8080/hello" target="_blank" rel="noopener">http://localhost:8080/hello</a> ，可以出现文字了：  </p>
 <img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-16.png" class>
 
