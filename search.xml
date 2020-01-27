@@ -40,21 +40,7 @@
 <img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-18.png" class>
 </li>
 <li><p><strong>导入spring boot相关依赖</strong><br>从Spring官网的<a href="https://spring.io/guides/gs/rest-service/" target="_blank" rel="noopener">guides</a>中复制如下到<code>pom.xml</code>文件：</p>
-<pre><code>
-  <parent>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-parent</artifactId>
-      <version>2.2.2.RELEASE</version>
-      <relativePath> <!-- lookup parent from repository -->
-  </relativePath></parent>
-
-  <dependencies>
-      <dependency>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-web</artifactId>
-      </dependency>
-  </dependencies>
-</code></pre>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;parent&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;<span class="regexp">/groupId&gt;</span></span><br><span class="line"><span class="regexp">    &lt;artifactId&gt;spring-boot-starter-parent&lt;/</span>artifactId&gt;</span><br><span class="line">    &lt;version&gt;<span class="number">2.2</span><span class="number">.2</span>.RELEASE&lt;<span class="regexp">/version&gt;</span></span><br><span class="line"><span class="regexp">    &lt;relativePath/</span>&gt; &lt;!-- lookup parent <span class="keyword">from</span> repository --&gt;</span><br><span class="line">&lt;<span class="regexp">/parent&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;dependencies&gt;</span></span><br><span class="line"><span class="regexp">    &lt;dependency&gt;</span></span><br><span class="line"><span class="regexp">        &lt;groupId&gt;org.springframework.boot&lt;/g</span>roupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-boot-starter-web&lt;<span class="regexp">/artifactId&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>dependency&gt;</span><br><span class="line">&lt;<span class="regexp">/dependencies&gt;</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
@@ -95,7 +81,23 @@ public class SpringBoot02HelloworldApplication {
 <img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-13.png" class> 
 </li>
 <li><p><strong>在类中添加注解方法一</strong><br>为HelloController添加<font color="#FF0000">RestController</font>注解，向SpringBoot说明这是用于响应网络请求的类，其中@RestController就是<font color="#FF0000">@Controller + @ResponseBody </font>注解的综合，后无需再加<font color="#FF0000">ResponseBody </font>；<br>通过<font color="#FF0000">GetMapping/RequestMapping</font>注解，向SpringBoot说明可以响应/hello的Get请求。 </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;*</span><br><span class="line">  通过RestController注解，向SpringBoot说明这是一个响应网络请求的类。</span><br><span class="line"> *&#x2F;</span><br><span class="line">@RestController</span><br><span class="line">public class HelloController &#123;</span><br><span class="line"></span><br><span class="line">    &#x2F;*</span><br><span class="line">      通过GetMapping&#x2F;RequestMapping注解，向SpringBoot说明可以应&#x2F;hello的Get请求。</span><br><span class="line">      由于类使用的RestController就是Controller + ResponseBody，因此返回的无需加@ResponseBody注解。</span><br><span class="line">     *&#x2F;</span><br><span class="line">    @GetMapping(value &#x3D; &quot;&#x2F;hello&quot;)</span><br><span class="line">    public String hello() &#123;</span><br><span class="line">        return &quot;Hello World!!!&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>
+/*
+  通过RestController注解，向SpringBoot说明这是一个响应网络请求的类。
+ */
+@RestController
+public class HelloController {
+
+    /*
+      通过GetMapping/RequestMapping注解，向SpringBoot说明可以应/hello的Get请求。
+      由于类使用的RestController就是Controller + ResponseBody，因此返回的无需加@ResponseBody注解。
+     */
+    @GetMapping(value = "/hello")
+    public String hello() {
+        return "Hello World!!!";
+    }
+}
+</code></pre>
 <img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-24.png" class> 
 </li>
 <li><p><strong>在类中添加注解方法二</strong><br>为HelloController添加<font color="#FF0000">Controller</font>注解，向SpringBoot说明这是用于响应网络请求的类，后<font color="#FF0000">需加ResponseBody</font>；<br>通过<font color="#FF0000">GetMapping/RequestMapping + ResponseBody</font>注解，向SpringBoot说明可以响应/hello的Get请求。</p>
