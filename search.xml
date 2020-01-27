@@ -40,6 +40,7 @@
 <img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-18.png" class>
 </li>
 <li><p><strong>导入spring boot相关依赖</strong><br>从Spring官网的<a href="https://spring.io/guides/gs/rest-service/" target="_blank" rel="noopener">guides</a>中复制如下到<code>pom.xml</code>文件：</p>
+<pre><code>
   <parent>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-parent</artifactId>
@@ -53,7 +54,7 @@
           <artifactId>spring-boot-starter-web</artifactId>
       </dependency>
   </dependencies>
-
+</code></pre>
 
 </li>
 </ul>
