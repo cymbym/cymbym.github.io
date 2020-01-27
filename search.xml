@@ -122,7 +122,7 @@ public class HelloController {
 <li><p><strong>运行</strong><br>再次点击图中第七行的运行按钮： </p>
 <img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-38.png" class>  
 <p>此时访问<a href="http://localhost:8080/hello" target="_blank" rel="noopener">http://localhost:8080/hello</a> ，可以出现文字了：  </p>
-<img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-16.png" class>
+<img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-15.png" class>
 
 
 </li>
