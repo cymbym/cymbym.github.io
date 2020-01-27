@@ -137,7 +137,7 @@ public class HelloController {
 <p>得到的jar包在target目录下：  </p>
 <img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-27.png" class>
 </li>
-<li><p><strong>直接执行jar包</strong><br>扔到任意路径下后，在cmd的该路径下，执行<code>java -jar 包名</code>即可运行。</p>
+<li><p><strong>直接执行jar包</strong><br>扔到任意路径下后，在cmd的该路径下，执行<code>java -jar 包名</code>成功即完成炸包。</p>
 <img src="/2020/01/24/SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-28.png" class></li>
 </ul>
 ]]></content>
