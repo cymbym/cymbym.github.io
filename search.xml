@@ -137,9 +137,13 @@ public class HelloController {
 <p>得到的jar包在target目录下：  </p>
 <img src="/2020/01/24/%E3%80%90SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-27.png" class>
 </li>
-<li><p><strong>直接执行jar包</strong><br>扔到任意路径下后，在cmd的该路径下，执行<code>java -jar 包名</code>成功即完成炸包。</p>
-<img src="/2020/01/24/%E3%80%90SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-28.png" class></li>
+<li><p><strong>直接执行jar包</strong><br>扔到任意路径下后，在cmd的该路径下，执行<code>java -jar 包名</code>成功即完成炸包。  </p>
+<img src="/2020/01/24/%E3%80%90SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-28.png" class>
+
+
+</li>
 </ul>
+<h2 id="将应用打包成一个可执行的jar包-1"><a href="#将应用打包成一个可执行的jar包-1" class="headerlink" title="将应用打包成一个可执行的jar包"></a>将应用打包成一个可执行的jar包</h2><p>关于Spring Boot的安装使用，也可以查看其他关于Spring Boot相关文章。<br><a href="https://www.bilibili.com/video/av38657363?p=4" target="_blank" rel="noopener">SpringBoot_2019权威教程_spring boot_springboot核心篇+springboot整合篇</a><br><a href="https://www.cnblogs.com/Sarah-Strawberry/p/11088708.html" target="_blank" rel="noopener">搭建一个入门springboot工程（Spring Initializr创建方式）</a><br><a href="https://www.cnblogs.com/anywherego/p/9591706.html" target="_blank" rel="noopener">SpringBoot实战（一）HelloWorld</a><br><a href="http://blog.didispace.com/spring-boot-learning-1/" target="_blank" rel="noopener">Spring Boot快速入门</a></p>
 ]]></content>
       <categories>
         <category>Spring Boot</category>
