@@ -127,7 +127,7 @@ public class HelloController {
 <li><p><strong>在右侧的maven中找到package的位置，双击生成jar包</strong>   </p>
 <img src="/2020/01/24/%E3%80%90SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-26.png" class>  
 <p>若此处报错，注意检查User settings file的路径：  </p>
-<img src="/2020/01/24/%E3%80%90SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-22.png" class>  
+<img src="/2020/01/24/%E3%80%90SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-25.png" class>  
 <p>得到的jar包在target目录下：  </p>
 <img src="/2020/01/24/%E3%80%90SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-27.png" class>
 </li>
