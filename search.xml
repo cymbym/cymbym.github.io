@@ -189,7 +189,7 @@ public @interface EnableAutoConfiguration {
 <li><font color="#FF0000">@Import({Registrar.class})</font>：<br>Spring的底层注解@Import，给容器中导入一个组件；<br>导入的组件由Registrar.class将主配置类（@SpringBootApplication）所在包及其所有子包扫描到Spring容器。  </li>
 </ul>
 </li>
-<li><font color="#FF0000">@Import({AutoConfigurationImportSelector.class})</font>：<br>给容器中导入组件；<br>AutoConfigurationImportSelector.class：导入哪些组件的选择器；<br>将所有需要导入的组件以全类名的方式返回；这些组件就会被添加到容器中；<br>会给容器中导入非常多的自动配置类（XXXAutoConfiguration）就是给这容器中导入这个场景所需要的全部组件，并配置好这些组件。  <img src="/2020/01/24/%E3%80%90SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-40.png" class>  
+<li>@Import({AutoConfigurationImportSelector.class})<br><font color="#FF0000">@Import({AutoConfigurationImportSelector.class})</font>：给容器中导入组件；<br>AutoConfigurationImportSelector.class：导入哪些组件的选择器；<br>将所有需要导入的组件以全类名的方式返回；这些组件就会被添加到容器中；<br>会给容器中导入非常多的自动配置类（XXXAutoConfiguration）就是给这容器中导入这个场景所需要的全部组件，并配置好这些组件。  <img src="/2020/01/24/%E3%80%90SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-40.png" class>  
 有了自动配置了就免去了手动编写配置注入功能组件等的工作；<br>其中有：<code>SpringFactoriesLoader.loadFactoryNames(EnableAutoConfiguration.class, ClassLoader);</code>  </li>
 </ul>
 </li>
