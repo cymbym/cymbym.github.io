@@ -142,33 +142,62 @@ public class HelloController {
 </ul>
 <p>上一篇文章介绍了Spring Boot的安装及使用一个简单的web应用。本文主要介绍了这个Hello World请求的细节实现。</p>
 <h2 id="Hello-World探究"><a href="#Hello-World探究" class="headerlink" title="Hello World探究"></a>Hello World探究</h2><h3 id="POM文件"><a href="#POM文件" class="headerlink" title="POM文件"></a>POM文件</h3><ul>
-<li><strong>父项目</strong><br>在<code>pom.xml</code>中可以得到Spring Boot场景启动器的父项目：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">    &lt;parent&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-boot-starter-parent&lt;&#x2F;artifactId&gt;</span><br><span class="line">        &lt;version&gt;2.2.2.RELEASE&lt;&#x2F;version&gt;</span><br><span class="line">        &lt;relativePath&#x2F;&gt; &lt;!-- lookup parent from repository --&gt;</span><br><span class="line">    &lt;&#x2F;parent&gt;</span><br><span class="line">&#96;&#96;&#96; </span><br><span class="line">对上述&#96;spring-boot-starter-parent&#96;，使用&#96;ctrl+Enter&#96;，跳转到该父项目的父项目：</span><br></pre></td></tr></table></figure>
-<parent>
-  <groupId>org.springframework.boot</groupId>
-  <artifactId>spring-boot-dependencies</artifactId>
-  <version>2.2.4.RELEASE</version>
-  <relativePath>../../spring-boot-dependencies</relativePath>
-</parent>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">其位于文件&#96;spring-boot-starter-parent-2.2.4.RELEASE.pom&#96;中。</span><br><span class="line"></span><br><span class="line">* **保存的依赖**  </span><br><span class="line">在&#96;pom.xml&#96;中可以得到Spring Boot场景启动器的依赖，  </span><br><span class="line">&lt;pre&gt;&lt;code&gt;</span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;spring-boot-starter-web&lt;&#x2F;artifactId&gt;</span><br><span class="line">		&lt;&#x2F;dependency&gt;</span><br><span class="line">&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;</span><br><span class="line">其中，&#96;spring-boot-starter&#96; &#96;-web&#96;：Spring Boot场景启动器；帮助导入web模块正常运行所需组件。  </span><br><span class="line">Spring Boot将所有功能场景都抽取出来，做成一个个starters（启动器），只要在项目里引用相关starter就可以把相关场景的所有依赖导入进来。</span><br><span class="line"></span><br><span class="line">### 主程序类&#x2F;主入口类</span><br><span class="line">&lt;pre&gt;&lt;code&gt;  &#x2F;*</span><br><span class="line">    用SpringBootApplication来标注一个主程序类，说明这是一个Spring Boot应用</span><br><span class="line">   *&#x2F;</span><br><span class="line">  &lt;font color&#x3D;#FF0000&gt;@SpringBootApplication&lt;&#x2F;font&gt;</span><br><span class="line">  public class SpringBoot02HelloworldApplication &#123;</span><br><span class="line">      public static void main(String[] args) &#123;</span><br><span class="line">          &#x2F;&#x2F;启动spring应用</span><br><span class="line">          SpringApplication.run(SpringBoot02HelloworldApplication.class, args);</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt; </span><br><span class="line">&lt;font color&#x3D;#FF0000&gt;@SpringBootApplication&lt;&#x2F;font&gt;：用Spring Boot应用来标注某个类，说明这个类是Spring Boot应用的主配置类，Spring Boot就应该运行这个类的main方法来启动应用。</span><br><span class="line"></span><br><span class="line">&lt;pre&gt;&lt;code&gt;@Target(&#123;ElementType.TYPE&#125;)</span><br><span class="line">@Retention(RetentionPolicy.RUNTIME)</span><br><span class="line">@Documented</span><br><span class="line">@Inherited</span><br><span class="line">&lt;font color&#x3D;#FF0000&gt;@SpringBootConfiguration&lt;&#x2F;font&gt;</span><br><span class="line">&lt;font color&#x3D;#FF0000&gt;@EnableAutoConfiguration&lt;&#x2F;font&gt;</span><br><span class="line">@ComponentScan(</span><br><span class="line">    excludeFilters &#x3D; &#123;@Filter(</span><br><span class="line">    type &#x3D; FilterType.CUSTOM,</span><br><span class="line">    classes &#x3D; &#123;TypeExcludeFilter.class&#125;</span><br><span class="line">), @Filter(</span><br><span class="line">    type &#x3D; FilterType.CUSTOM,</span><br><span class="line">    classes &#x3D; &#123;AutoConfigurationExcludeFilter.class&#125;</span><br><span class="line">)&#125;</span><br><span class="line">)</span><br><span class="line">public @interface SpringBootApplication &#123;</span><br><span class="line">&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;  </span><br><span class="line">&amp;emsp;&lt;font color&#x3D;#FF0000&gt;@SpringBootConfiguration&lt;&#x2F;font&gt;：Spring Boot的配置类&#x2F;配置文件；  </span><br><span class="line">&amp;emsp;&amp;emsp;&amp;emsp;标注在某个类上，表示这是一个Spring Boot的配置类；  </span><br><span class="line">&amp;emsp;&amp;emsp;&amp;emsp;需要用@Configuration来标注这个注解。  </span><br><span class="line"></span><br><span class="line">&amp;emsp;&lt;font color&#x3D;#FF0000&gt;@EnableAutoConfiguration&lt;&#x2F;font&gt;：开启自动配置功能；  </span><br><span class="line">&amp;emsp;&amp;emsp;&amp;emsp;以前我们需要配置的东西，Spring Boot帮我们自动配置；  </span><br><span class="line">&amp;emsp;&amp;emsp;&amp;emsp;@EnableAutoConfiguration告诉Spring Boot要开启自动配置功能，这样才能生效；</span><br></pre></td></tr></table></figure>
-     @AutoConfigurationPackage
-     @Import({AutoConfigurationImportSelector.class})
-     public @interface EnableAutoConfiguration {
-```
-&emsp;&emsp;&emsp;<font color="#FF0000">@AutoConfigurationPackage</font>：自动配置包；  
-&emsp;&emsp;&emsp;&emsp;&emsp;<font color="#FF0000">@Import({Registrar.class})</font>：  
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Spring的底层注解@Import，给容器中导入一个组件；  
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;导入的组件由Registrar.class将主配置类（@SpringBootApplication）所在包及其所有子包扫描到Spring容器。  
-&emsp;&emsp;&emsp;<font color="#FF0000">@Import({AutoConfigurationImportSelector.class})</font>：  
-&emsp;&emsp;&emsp;&emsp;&emsp;给容器中导入组件；  
-&emsp;&emsp;&emsp;&emsp;&emsp;AutoConfigurationImportSelector.class：导入哪些组件的选择器；
-&emsp;&emsp;&emsp;&emsp;&emsp;将所有需要导入的组件以全类名的方式返回；这些组件就会被添加到容器中；  
-&emsp;&emsp;&emsp;&emsp;&emsp;会给容器中导入非常多的自动配置类（XXXAutoConfiguration）就是给这容器中导入这个场景所需要的全部组件，并配置好这些组件。  
-&emsp;&emsp;&emsp;&emsp;&emsp;<img src="/2020/01/24/%E3%80%90SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-40.png" class>  
-&emsp;&emsp;&emsp;&emsp;&emsp;有了自动配置了就免去了手动编写配置注入功能组件等的工作；  
-&emsp;&emsp;&emsp;&emsp;&emsp;其中有：`SpringFactoriesLoader.loadFactoryNames(EnableAutoConfiguration.class, ClassLoader);`  
-可以看出Spring在类路径`META-INF/spring.factories`下获取`EnableAutoConfiguration`指定的值。<font color="#FF0000">将这些值作为自动配置类导入到容器中，自动配置类就自动帮助我们完成配置工作。</font>
-
+<li><p><strong>父项目</strong><br>在<code>pom.xml</code>中可以得到Spring Boot场景启动器的父项目：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">    &lt;parent&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;<span class="regexp">/groupId&gt;</span></span><br><span class="line"><span class="regexp">        &lt;artifactId&gt;spring-boot-starter-parent&lt;/</span>artifactId&gt;</span><br><span class="line">        &lt;version&gt;<span class="number">2.2</span><span class="number">.2</span>.RELEASE&lt;<span class="regexp">/version&gt;</span></span><br><span class="line"><span class="regexp">        &lt;relativePath/</span>&gt; &lt;!-- lookup parent <span class="keyword">from</span> repository --&gt;</span><br><span class="line">    &lt;<span class="regexp">/parent&gt;</span></span><br><span class="line"><span class="regexp">```  </span></span><br><span class="line"><span class="regexp">对上述`spring-boot-starter-parent`，使用`ctrl+Enter`，跳转到该父项目的父项目： </span></span><br><span class="line"><span class="regexp">``` javascript</span></span><br><span class="line"><span class="regexp">    &lt;parent&gt;</span></span><br><span class="line"><span class="regexp">        &lt;groupId&gt;org.springframework.boot&lt;/g</span>roupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-boot-dependencies&lt;<span class="regexp">/artifactId&gt;</span></span><br><span class="line"><span class="regexp">        &lt;version&gt;2.2.4.RELEASE&lt;/</span>version&gt;</span><br><span class="line">        &lt;relativePath&gt;../../spring-boot-dependencies&lt;<span class="regexp">/relativePath&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>parent&gt;</span><br></pre></td></tr></table></figure>
+<p>其位于文件<code>spring-boot-starter-parent-2.2.4.RELEASE.pom</code>中。</p>
 </li>
+<li><p><strong>保存的依赖</strong><br>在<code>pom.xml</code>中可以得到Spring Boot场景启动器的依赖，  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;spring-boot-starter-web&lt;&#x2F;artifactId&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>其中，<code>spring-boot-starter</code> <code>-web</code>：Spring Boot场景启动器；帮助导入web模块正常运行所需组件。<br>Spring Boot将所有功能场景都抽取出来，做成一个个starters（启动器），只要在项目里引用相关starter就可以把相关场景的所有依赖导入进来。</p>
+</li>
+</ul>
+<h3 id="主程序类-主入口类"><a href="#主程序类-主入口类" class="headerlink" title="主程序类/主入口类"></a>主程序类/主入口类</h3><ul>
+<li>@SpringBootApplication<pre><code>  /*
+  用SpringBootApplication来标注一个主程序类，说明这是一个Spring Boot应用
+ */
+<font color="#FF0000">@SpringBootApplication</font>
+public class SpringBoot02HelloworldApplication {
+    public static void main(String[] args) {
+        //启动spring应用
+        SpringApplication.run(SpringBoot02HelloworldApplication.class, args);
+    }
+}
+</code></pre> 
+<font color="#FF0000">@用SpringBootApplication来标注一个主程序类</font>：用Spring Boot应用来标注某个类，说明这个类是Spring Boot应用的主配置类，Spring Boot就应该运行这个类的main方法来启动应用。  <pre><code>@Target({ElementType.TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+@Inherited
+<font color="#FF0000">@SpringBootConfiguration</font>
+<font color="#FF0000">@EnableAutoConfiguration</font>
+@ComponentScan(
+  excludeFilters = {@Filter(
+  type = FilterType.CUSTOM,
+  classes = {TypeExcludeFilter.class}
+), @Filter(
+  type = FilterType.CUSTOM,
+  classes = {AutoConfigurationExcludeFilter.class}
+)}
+)
+public @interface SpringBootApplication {
+</code></pre>  
+<ul>
+<li>@SpringBootConfiguration<br><font color="#FF0000">@SpringBootConfigurations Spring Boot的配置类/配置文件</font>：<br>标注在某个类上，表示这是一个Spring Boot的配置类；<br>需要用@Configuration来标注这个注解。  </li>
+<li>@EnableAutoConfiguration<br><font color="#FF0000">@EnableAutoConfiguration开启自动配置功能</font>：<br>以前我们需要配置的东西，Spring Boot帮我们自动配置；<br>@EnableAutoConfiguration告诉Spring Boot要开启自动配置功能，这样才能生效；   <pre><code>@AutoConfigurationPackage
+@Import({AutoConfigurationImportSelector.class})
+public @interface EnableAutoConfiguration {
+</code></pre>  
+<ul>
+<li>@AutoConfigurationPackage<br><font color="#FF0000">@AutoConfigurationPackage</font>：自动配置包；  <ul>
+<li><font color="#FF0000">@Import({Registrar.class})</font>：<br>Spring的底层注解@Import，给容器中导入一个组件；<br>导入的组件由Registrar.class将主配置类（@SpringBootApplication）所在包及其所有子包扫描到Spring容器。  </li>
+</ul>
+</li>
+<li><font color="#FF0000">@Import({AutoConfigurationImportSelector.class})</font>：<br>给容器中导入组件；<br>AutoConfigurationImportSelector.class：导入哪些组件的选择器；<br>将所有需要导入的组件以全类名的方式返回；这些组件就会被添加到容器中；<br>会给容器中导入非常多的自动配置类（XXXAutoConfiguration）就是给这容器中导入这个场景所需要的全部组件，并配置好这些组件。  <img src="/2020/01/24/%E3%80%90SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-40.png" class>  
+有了自动配置了就免去了手动编写配置注入功能组件等的工作；<br>其中有：<code>SpringFactoriesLoader.loadFactoryNames(EnableAutoConfiguration.class, ClassLoader);</code>  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>可以看出Spring在类路径<code>META-INF/spring.factories</code>下获取<code>EnableAutoConfiguration</code>指定的值。<font color="#FF0000">将这些值作为自动配置类导入到容器中，自动配置类就自动帮助我们完成配置工作。</font></li>
 </ul>
 <img src="/2020/01/24/%E3%80%90SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-2.png" class> 
 
