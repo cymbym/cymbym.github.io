@@ -137,7 +137,7 @@ public class HelloController {
 </li>
 </ul>
 <p>上一篇文章介绍了Spring Boot的安装及使用一个简单的web应用。本文主要介绍了这个Hello World请求的细节实现。</p>
-<h2 id="Hello-World探究"><a href="#Hello-World探究" class="headerlink" title="Hello World探究"></a>Hello World探究</h2><h3 id="POM文件"><a href="#POM文件" class="headerlink" title="POM文件"></a>POM文件</h3><ul>
+<h1 id="Hello-World探究"><a href="#Hello-World探究" class="headerlink" title="Hello World探究"></a>Hello World探究</h1><h2 id="POM文件"><a href="#POM文件" class="headerlink" title="POM文件"></a>POM文件</h2><ul>
 <li><p><strong>父项目</strong><br>在<code>pom.xml</code>中可以得到Spring Boot场景启动器的父项目：</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;parent&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;<span class="regexp">/groupId&gt;</span></span><br><span class="line"><span class="regexp">    &lt;artifactId&gt;spring-boot-starter-parent&lt;/</span>artifactId&gt;</span><br><span class="line">    &lt;version&gt;<span class="number">2.2</span><span class="number">.2</span>.RELEASE&lt;<span class="regexp">/version&gt;</span></span><br><span class="line"><span class="regexp">    &lt;relativePath/</span>&gt; &lt;!-- lookup parent <span class="keyword">from</span> repository --&gt;</span><br><span class="line">&lt;<span class="regexp">/parent&gt;</span></span><br></pre></td></tr></table></figure>
 <p>对上述<code>spring-boot-starter-parent</code>，使用<code>ctrl+Enter</code>，跳转到该父项目的父项目： </p>
@@ -149,7 +149,7 @@ public class HelloController {
 <p>其中，<code>spring-boot-starter</code> <code>-web</code>：Spring Boot场景启动器；帮助导入web模块正常运行所需组件。<br>Spring Boot将所有功能场景都抽取出来，做成一个个starters（启动器），只要在项目里引用相关starter就可以把相关场景的所有依赖导入进来。</p>
 </li>
 </ul>
-<h3 id="主程序类-主入口类"><a href="#主程序类-主入口类" class="headerlink" title="主程序类/主入口类"></a>主程序类/主入口类</h3><ul>
+<h2 id="主程序类-主入口类"><a href="#主程序类-主入口类" class="headerlink" title="主程序类/主入口类"></a>主程序类/主入口类</h2><ul>
 <li>@SpringBootApplication<pre><code>  /*
   用SpringBootApplication来标注一个主程序类，说明这是一个Spring Boot应用
  */
@@ -199,7 +199,7 @@ public @interface EnableAutoConfiguration {
 </ul>
 <img src="/2020/01/24/%E3%80%90SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-2.png" class> 
 
-<h2 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h2><p>关于Spring Boot的安装使用，也可以查看其他关于Spring Boot相关文章。<br><a href="https://www.bilibili.com/video/av38657363?p=4" target="_blank" rel="noopener">SpringBoot_2019权威教程_spring boot_springboot核心篇+springboot整合篇</a><br><a href="https://www.cnblogs.com/Sarah-Strawberry/p/11088708.html" target="_blank" rel="noopener">搭建一个入门springboot工程（Spring Initializr创建方式）</a><br><a href="https://www.cnblogs.com/anywherego/p/9591706.html" target="_blank" rel="noopener">SpringBoot实战（一）HelloWorld</a><br><a href="http://blog.didispace.com/spring-boot-learning-1/" target="_blank" rel="noopener">Spring Boot快速入门</a></p>
+<h1 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h1><p>关于Spring Boot的安装使用，也可以查看其他关于Spring Boot相关文章。<br><a href="https://www.bilibili.com/video/av38657363?p=4" target="_blank" rel="noopener">SpringBoot_2019权威教程_spring boot_springboot核心篇+springboot整合篇</a><br><a href="https://www.cnblogs.com/Sarah-Strawberry/p/11088708.html" target="_blank" rel="noopener">搭建一个入门springboot工程（Spring Initializr创建方式）</a><br><a href="https://www.cnblogs.com/anywherego/p/9591706.html" target="_blank" rel="noopener">SpringBoot实战（一）HelloWorld</a><br><a href="http://blog.didispace.com/spring-boot-learning-1/" target="_blank" rel="noopener">Spring Boot快速入门</a></p>
 ]]></content>
       <categories>
         <category>Spring Boot</category>
