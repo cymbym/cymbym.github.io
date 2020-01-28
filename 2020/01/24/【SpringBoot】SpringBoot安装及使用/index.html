@@ -86,7 +86,7 @@
 <meta property="og:image" content="http://yoursite.com/2020/01/24/%E3%80%90SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-40.png">
 <meta property="og:image" content="http://yoursite.com/2020/01/24/%E3%80%90SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-2.png">
 <meta property="article:published_time" content="2020-01-24T15:20:45.000Z">
-<meta property="article:modified_time" content="2020-01-28T13:25:50.984Z">
+<meta property="article:modified_time" content="2020-01-28T13:30:04.590Z">
 <meta property="article:author" content="Xinbin Shen">
 <meta property="article:tag" content="Spring Boot">
 <meta name="twitter:card" content="summary">
@@ -268,7 +268,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-01-28 21:25:50" itemprop="dateModified" datetime="2020-01-28T21:25:50+08:00">2020-01-28</time>
+                <time title="Modified: 2020-01-28 21:30:04" itemprop="dateModified" datetime="2020-01-28T21:30:04+08:00">2020-01-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -432,69 +432,34 @@ public class HelloController {
 </ul>
 <p>上一篇文章介绍了Spring Boot的安装及使用一个简单的web应用。本文主要介绍了这个Hello World请求的细节实现。</p>
 <h2 id="Hello-World探究"><a href="#Hello-World探究" class="headerlink" title="Hello World探究"></a>Hello World探究</h2><h3 id="POM文件"><a href="#POM文件" class="headerlink" title="POM文件"></a>POM文件</h3><ul>
-<li><p><strong>父项目</strong><br>在<code>pom.xml</code>中可以得到Spring Boot场景启动器的父项目：</p>
-<pre><code>
-  <parent>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-parent</artifactId>
-      <version>2.2.2.RELEASE</version>
-      <relativePath> <!-- lookup parent from repository -->
-  </relativePath></parent>
-</code></pre>  
-<p>对上述<code>spring-boot-starter-parent</code>，使用<code>ctrl+Enter</code>，跳转到该父项目的父项目：  </p>
-<pre><code>
+<li><strong>父项目</strong><br>在<code>pom.xml</code>中可以得到Spring Boot场景启动器的父项目：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">    &lt;parent&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-boot-starter-parent&lt;&#x2F;artifactId&gt;</span><br><span class="line">        &lt;version&gt;2.2.2.RELEASE&lt;&#x2F;version&gt;</span><br><span class="line">        &lt;relativePath&#x2F;&gt; &lt;!-- lookup parent from repository --&gt;</span><br><span class="line">    &lt;&#x2F;parent&gt;</span><br><span class="line">&#96;&#96;&#96; </span><br><span class="line">对上述&#96;spring-boot-starter-parent&#96;，使用&#96;ctrl+Enter&#96;，跳转到该父项目的父项目：</span><br></pre></td></tr></table></figure>
 <parent>
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-dependencies</artifactId>
   <version>2.2.4.RELEASE</version>
   <relativePath>../../spring-boot-dependencies</relativePath>
 </parent>
-</code></pre> 
-<p>其位于文件<code>spring-boot-starter-parent-2.2.4.RELEASE.pom</code>中。</p>
-</li>
-<li><p><strong>保存的依赖</strong><br>在<code>pom.xml</code>中可以得到Spring Boot场景启动器的依赖，  </p>
-<pre><code>
-      <dependency>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-web</artifactId>
-      </dependency>
-</code></pre>
-<p>其中，<code>spring-boot-starter</code> <code>-web</code>：Spring Boot场景启动器；帮助导入web模块正常运行所需组件。<br>Spring Boot将所有功能场景都抽取出来，做成一个个starters（启动器），只要在项目里引用相关starter就可以把相关场景的所有依赖导入进来。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">其位于文件&#96;spring-boot-starter-parent-2.2.4.RELEASE.pom&#96;中。</span><br><span class="line"></span><br><span class="line">* **保存的依赖**  </span><br><span class="line">在&#96;pom.xml&#96;中可以得到Spring Boot场景启动器的依赖，  </span><br><span class="line">&lt;pre&gt;&lt;code&gt;</span><br><span class="line">		&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;spring-boot-starter-web&lt;&#x2F;artifactId&gt;</span><br><span class="line">		&lt;&#x2F;dependency&gt;</span><br><span class="line">&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;</span><br><span class="line">其中，&#96;spring-boot-starter&#96; &#96;-web&#96;：Spring Boot场景启动器；帮助导入web模块正常运行所需组件。  </span><br><span class="line">Spring Boot将所有功能场景都抽取出来，做成一个个starters（启动器），只要在项目里引用相关starter就可以把相关场景的所有依赖导入进来。</span><br><span class="line"></span><br><span class="line">### 主程序类&#x2F;主入口类</span><br><span class="line">&lt;pre&gt;&lt;code&gt;  &#x2F;*</span><br><span class="line">    用SpringBootApplication来标注一个主程序类，说明这是一个Spring Boot应用</span><br><span class="line">   *&#x2F;</span><br><span class="line">  &lt;font color&#x3D;#FF0000&gt;@SpringBootApplication&lt;&#x2F;font&gt;</span><br><span class="line">  public class SpringBoot02HelloworldApplication &#123;</span><br><span class="line">      public static void main(String[] args) &#123;</span><br><span class="line">          &#x2F;&#x2F;启动spring应用</span><br><span class="line">          SpringApplication.run(SpringBoot02HelloworldApplication.class, args);</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt; </span><br><span class="line">&lt;font color&#x3D;#FF0000&gt;@SpringBootApplication&lt;&#x2F;font&gt;：用Spring Boot应用来标注某个类，说明这个类是Spring Boot应用的主配置类，Spring Boot就应该运行这个类的main方法来启动应用。</span><br><span class="line"></span><br><span class="line">&lt;pre&gt;&lt;code&gt;@Target(&#123;ElementType.TYPE&#125;)</span><br><span class="line">@Retention(RetentionPolicy.RUNTIME)</span><br><span class="line">@Documented</span><br><span class="line">@Inherited</span><br><span class="line">&lt;font color&#x3D;#FF0000&gt;@SpringBootConfiguration&lt;&#x2F;font&gt;</span><br><span class="line">&lt;font color&#x3D;#FF0000&gt;@EnableAutoConfiguration&lt;&#x2F;font&gt;</span><br><span class="line">@ComponentScan(</span><br><span class="line">    excludeFilters &#x3D; &#123;@Filter(</span><br><span class="line">    type &#x3D; FilterType.CUSTOM,</span><br><span class="line">    classes &#x3D; &#123;TypeExcludeFilter.class&#125;</span><br><span class="line">), @Filter(</span><br><span class="line">    type &#x3D; FilterType.CUSTOM,</span><br><span class="line">    classes &#x3D; &#123;AutoConfigurationExcludeFilter.class&#125;</span><br><span class="line">)&#125;</span><br><span class="line">)</span><br><span class="line">public @interface SpringBootApplication &#123;</span><br><span class="line">&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;  </span><br><span class="line">&amp;emsp;&lt;font color&#x3D;#FF0000&gt;@SpringBootConfiguration&lt;&#x2F;font&gt;：Spring Boot的配置类&#x2F;配置文件；  </span><br><span class="line">&amp;emsp;&amp;emsp;&amp;emsp;标注在某个类上，表示这是一个Spring Boot的配置类；  </span><br><span class="line">&amp;emsp;&amp;emsp;&amp;emsp;需要用@Configuration来标注这个注解。  </span><br><span class="line"></span><br><span class="line">&amp;emsp;&lt;font color&#x3D;#FF0000&gt;@EnableAutoConfiguration&lt;&#x2F;font&gt;：开启自动配置功能；  </span><br><span class="line">&amp;emsp;&amp;emsp;&amp;emsp;以前我们需要配置的东西，Spring Boot帮我们自动配置；  </span><br><span class="line">&amp;emsp;&amp;emsp;&amp;emsp;@EnableAutoConfiguration告诉Spring Boot要开启自动配置功能，这样才能生效；</span><br></pre></td></tr></table></figure>
+     @AutoConfigurationPackage
+     @Import({AutoConfigurationImportSelector.class})
+     public @interface EnableAutoConfiguration {
+```
+&emsp;&emsp;&emsp;<font color="#FF0000">@AutoConfigurationPackage</font>：自动配置包；  
+&emsp;&emsp;&emsp;&emsp;&emsp;<font color="#FF0000">@Import({Registrar.class})</font>：  
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Spring的底层注解@Import，给容器中导入一个组件；  
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;导入的组件由Registrar.class将主配置类（@SpringBootApplication）所在包及其所有子包扫描到Spring容器。  
+&emsp;&emsp;&emsp;<font color="#FF0000">@Import({AutoConfigurationImportSelector.class})</font>：  
+&emsp;&emsp;&emsp;&emsp;&emsp;给容器中导入组件；  
+&emsp;&emsp;&emsp;&emsp;&emsp;AutoConfigurationImportSelector.class：导入哪些组件的选择器；
+&emsp;&emsp;&emsp;&emsp;&emsp;将所有需要导入的组件以全类名的方式返回；这些组件就会被添加到容器中；  
+&emsp;&emsp;&emsp;&emsp;&emsp;会给容器中导入非常多的自动配置类（XXXAutoConfiguration）就是给这容器中导入这个场景所需要的全部组件，并配置好这些组件。  
+&emsp;&emsp;&emsp;&emsp;&emsp;<img src="/2020/01/24/%E3%80%90SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-40.png" class>  
+&emsp;&emsp;&emsp;&emsp;&emsp;有了自动配置了就免去了手动编写配置注入功能组件等的工作；  
+&emsp;&emsp;&emsp;&emsp;&emsp;其中有：`SpringFactoriesLoader.loadFactoryNames(EnableAutoConfiguration.class, ClassLoader);`  
+可以看出Spring在类路径`META-INF/spring.factories`下获取`EnableAutoConfiguration`指定的值。<font color="#FF0000">将这些值作为自动配置类导入到容器中，自动配置类就自动帮助我们完成配置工作。</font>
+
 </li>
 </ul>
-<h3 id="主程序类-主入口类"><a href="#主程序类-主入口类" class="headerlink" title="主程序类/主入口类"></a>主程序类/主入口类</h3><pre><code>  /*
-    用SpringBootApplication来标注一个主程序类，说明这是一个Spring Boot应用
-   */
-  <font color="#FF0000">@SpringBootApplication</font>
-  public class SpringBoot02HelloworldApplication {
-      public static void main(String[] args) {
-          //启动spring应用
-          SpringApplication.run(SpringBoot02HelloworldApplication.class, args);
-      }
-}
-</code></pre> 
-<p><font color="#FF0000">@SpringBootApplication</font>：用Spring Boot应用来标注某个类，说明这个类是Spring Boot应用的主配置类，Spring Boot就应该运行这个类的main方法来启动应用。</p>
-<pre><code>@Target({ElementType.TYPE})
-@Retention(RetentionPolicy.RUNTIME)
-@Documented
-@Inherited
-<font color="#FF0000">@SpringBootConfiguration</font>
-<font color="#FF0000">@EnableAutoConfiguration</font>
-@ComponentScan(
-    excludeFilters = {@Filter(
-    type = FilterType.CUSTOM,
-    classes = {TypeExcludeFilter.class}
-), @Filter(
-    type = FilterType.CUSTOM,
-    classes = {AutoConfigurationExcludeFilter.class}
-)}
-)
-public @interface SpringBootApplication {
-</code></pre>  
-<p>&emsp;<font color="#FF0000">@SpringBootConfiguration</font>：Spring Boot的配置类/配置文件；<br>&emsp;&emsp;&emsp;标注在某个类上，表示这是一个Spring Boot的配置类；<br>&emsp;&emsp;&emsp;需要用@Configuration来标注这个注解。  </p>
-<p>&emsp;<font color="#FF0000">@EnableAutoConfiguration</font>：开启自动配置功能；<br>&emsp;&emsp;&emsp;以前我们需要配置的东西，Spring Boot帮我们自动配置；<br>&emsp;&emsp;&emsp;@EnableAutoConfiguration告诉Spring Boot要开启自动配置功能，这样才能生效；  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@AutoConfigurationPackage</span><br><span class="line">@Import(&#123;AutoConfigurationImportSelector.class&#125;)</span><br><span class="line">public @interface EnableAutoConfiguration &#123;</span><br></pre></td></tr></table></figure>
-<p>&emsp;&emsp;&emsp;<font color="#FF0000">@AutoConfigurationPackage</font>：自动配置包；<br>&emsp;&emsp;&emsp;&emsp;&emsp;<font color="#FF0000">@Import({Registrar.class})</font>：<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Spring的底层注解@Import，给容器中导入一个组件；<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;导入的组件由Registrar.class将主配置类（@SpringBootApplication）所在包及其所有子包扫描到Spring容器。<br>&emsp;&emsp;&emsp;<font color="#FF0000">@Import({AutoConfigurationImportSelector.class})</font>：<br>&emsp;&emsp;&emsp;&emsp;&emsp;给容器中导入组件；<br>&emsp;&emsp;&emsp;&emsp;&emsp;AutoConfigurationImportSelector.class：导入哪些组件的选择器；<br>&emsp;&emsp;&emsp;&emsp;&emsp;将所有需要导入的组件以全类名的方式返回；这些组件就会被添加到容器中；<br>&emsp;&emsp;&emsp;&emsp;&emsp;会给容器中导入非常多的自动配置类（XXXAutoConfiguration）就是给这容器中导入这个场景所需要的全部组件，并配置好这些组件。<br>&emsp;&emsp;&emsp;&emsp;&emsp;<img src="/2020/01/24/%E3%80%90SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-40.png" class><br>&emsp;&emsp;&emsp;&emsp;&emsp;有了自动配置了就免去了手动编写配置注入功能组件等的工作；<br>&emsp;&emsp;&emsp;&emsp;&emsp;其中有：<code>SpringFactoriesLoader.loadFactoryNames(EnableAutoConfiguration.class, ClassLoader);</code><br>可以看出Spring在类路径<code>META-INF/spring.factories</code>下获取<code>EnableAutoConfiguration</code>指定的值。<font color="#FF0000">将这些值作为自动配置类导入到容器中，自动配置类就自动帮助我们完成配置工作。</font></p>
 <img src="/2020/01/24/%E3%80%90SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-2.png" class> 
 
 <h2 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h2><p>关于Spring Boot的安装使用，也可以查看其他关于Spring Boot相关文章。<br><a href="https://www.bilibili.com/video/av38657363?p=4" target="_blank" rel="noopener">SpringBoot_2019权威教程_spring boot_springboot核心篇+springboot整合篇</a><br><a href="https://www.cnblogs.com/Sarah-Strawberry/p/11088708.html" target="_blank" rel="noopener">搭建一个入门springboot工程（Spring Initializr创建方式）</a><br><a href="https://www.cnblogs.com/anywherego/p/9591706.html" target="_blank" rel="noopener">SpringBoot实战（一）HelloWorld</a><br><a href="http://blog.didispace.com/spring-boot-learning-1/" target="_blank" rel="noopener">Spring Boot快速入门</a></p>
@@ -579,7 +544,7 @@ public @interface SpringBootApplication {
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringBoot"><span class="nav-number">1.</span> <span class="nav-text">SpringBoot</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HelloWorld入门"><span class="nav-number">2.</span> <span class="nav-text">HelloWorld入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置环境"><span class="nav-number">2.1.</span> <span class="nav-text">配置环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用Spring-Initializr创建SpringBoot项目"><span class="nav-number">2.2.</span> <span class="nav-text">使用Spring Initializr创建SpringBoot项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用Maven创建SpringBoot项目"><span class="nav-number">2.3.</span> <span class="nav-text">使用Maven创建SpringBoot项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用Spring官网创建SpringBoot项目"><span class="nav-number">2.4.</span> <span class="nav-text">使用Spring官网创建SpringBoot项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写一个controller查看前后端交互信息"><span class="nav-number">2.5.</span> <span class="nav-text">写一个controller查看前后端交互信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将应用打包成一个可执行的jar包"><span class="nav-number">2.6.</span> <span class="nav-text">将应用打包成一个可执行的jar包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hello-World探究"><span class="nav-number">2.7.</span> <span class="nav-text">Hello World探究</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#POM文件"><span class="nav-number">2.7.1.</span> <span class="nav-text">POM文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主程序类-主入口类"><span class="nav-number">2.7.2.</span> <span class="nav-text">主程序类&#x2F;主入口类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#推荐"><span class="nav-number">2.8.</span> <span class="nav-text">推荐</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringBoot"><span class="nav-number">1.</span> <span class="nav-text">SpringBoot</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HelloWorld入门"><span class="nav-number">2.</span> <span class="nav-text">HelloWorld入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置环境"><span class="nav-number">2.1.</span> <span class="nav-text">配置环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用Spring-Initializr创建SpringBoot项目"><span class="nav-number">2.2.</span> <span class="nav-text">使用Spring Initializr创建SpringBoot项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用Maven创建SpringBoot项目"><span class="nav-number">2.3.</span> <span class="nav-text">使用Maven创建SpringBoot项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用Spring官网创建SpringBoot项目"><span class="nav-number">2.4.</span> <span class="nav-text">使用Spring官网创建SpringBoot项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写一个controller查看前后端交互信息"><span class="nav-number">2.5.</span> <span class="nav-text">写一个controller查看前后端交互信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将应用打包成一个可执行的jar包"><span class="nav-number">2.6.</span> <span class="nav-text">将应用打包成一个可执行的jar包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hello-World探究"><span class="nav-number">2.7.</span> <span class="nav-text">Hello World探究</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#POM文件"><span class="nav-number">2.7.1.</span> <span class="nav-text">POM文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#推荐"><span class="nav-number">2.8.</span> <span class="nav-text">推荐</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
