@@ -204,17 +204,7 @@ pets: [cat,dog,pig]
 <li><p><strong>编写主程序</strong><br>新建包和主程序：  </p>
 <img src="/2020/01/24/%E3%80%90SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-20.png" class>  
 <p>主程序用于启动Spring Boot应用：</p>
-<pre><code> /*
-  用SpringBootApplication来标注一个主程序类，说明这是一个Spring Boot应用
- */
-@SpringBootApplication
-public class SpringBoot02HelloworldApplication {
-    public static void main(String[] args) {
-        //启动spring应用
-        SpringApplication.run(SpringBoot02HelloworldApplication.class, args);
-    }
-}
-</code></pre> 
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">    用SpringBootApplication来标注一个主程序类，说明这是一个Spring Boot应用</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="meta">@SpringBootApplication</span></span><br><span class="line">  <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SpringBoot02HelloworldApplication</span> </span>&#123;</span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">          <span class="comment">//启动spring应用</span></span><br><span class="line">          SpringApplication.run(SpringBoot02HelloworldApplication<span class="class">.<span class="keyword">class</span>, <span class="title">args</span>)</span>;</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <img src="/2020/01/24/%E3%80%90SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-21.png" class>
 </li>
 <li><p><strong>创建完成</strong><br>点击图中第十行的运行按钮： </p>
