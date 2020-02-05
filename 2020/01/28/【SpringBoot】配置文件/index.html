@@ -66,7 +66,7 @@
 <meta property="og:image" content="http://yoursite.com/2020/01/28/%E3%80%90SpringBoot%E3%80%91%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/pasted-9.png">
 <meta property="og:image" content="http://yoursite.com/2020/01/28/%E3%80%90SpringBoot%E3%80%91%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/pasted-10.png">
 <meta property="article:published_time" content="2020-01-28T07:34:18.000Z">
-<meta property="article:modified_time" content="2020-02-05T10:26:17.759Z">
+<meta property="article:modified_time" content="2020-02-05T10:27:28.180Z">
 <meta property="article:author" content="Xinbin Shen">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/2020/01/28/%E3%80%90SpringBoot%E3%80%91%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/pasted-0.png">
@@ -247,7 +247,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-05 18:26:17" itemprop="dateModified" datetime="2020-02-05T18:26:17+08:00">2020-02-05</time>
+                <time title="Modified: 2020-02-05 18:27:28" itemprop="dateModified" datetime="2020-02-05T18:27:28+08:00">2020-02-05</time>
               </span>
 
           
@@ -324,10 +324,7 @@ pets: [cat,dog,pig]
 <h1 id="配置文件值注入"><a href="#配置文件值注入" class="headerlink" title="配置文件值注入"></a>配置文件值注入</h1><h2 id="本节要点"><a href="#本节要点" class="headerlink" title="本节要点"></a>本节要点</h2><img src="/2020/01/28/%E3%80%90SpringBoot%E3%80%91%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/pasted-12.png" class>
 
 <h2 id="Dog类"><a href="#Dog类" class="headerlink" title="Dog类"></a>Dog类</h2><p><code>com.example.spring_boot_04_config.bean</code>下新建Dog类：</p>
-<pre><code>public class Dog {
-    private String lastName;
-    private Integer age;
-</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Dog</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String lastName;</span><br><span class="line">    <span class="keyword">private</span> Integer age;</span><br></pre></td></tr></table></figure>
 
 <p><code>Alt + Insert</code>键入所有变量的<code>getter</code>和<code>setter</code>，以及<code>toString()</code>。  </p>
 <h2 id="用-ConfigurationProperties将Person类与配置文件属性绑定"><a href="#用-ConfigurationProperties将Person类与配置文件属性绑定" class="headerlink" title="用@ConfigurationProperties将Person类与配置文件属性绑定"></a>用<font color="#FF0000">@ConfigurationProperties</font>将Person类与<font color="#FF0000">配置文件属性</font>绑定</h2><p><code>com.example.spring_boot_04_config.bean</code>下新建Person类：  </p>
