@@ -31,8 +31,10 @@ port: 8081
 
 </li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">server:</span><br><span class="line">  port: 8081</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li><font color="#FF0000">XML</font>：需要更多标签。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;server&gt;</span><br><span class="line">   &lt;port&gt;8081&lt;&#x2F;port&gt;</span><br><span class="line">&lt;&#x2F;server&gt;</span><br></pre></td></tr></table></figure>
+<li><font color="#FF0000">XML</font>：需要更多标签。<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">server</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">port</span>&gt;</span>8081<span class="tag">&lt;/<span class="name">port</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">server</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
@@ -83,7 +85,7 @@ pets: [cat,dog,pig]
 <h2 id="用-Value将Person类与指定属性绑定"><a href="#用-Value将Person类与指定属性绑定" class="headerlink" title="用@Value将Person类与指定属性绑定"></a>用<font color="#FF0000">@Value</font>将Person类与<font color="#FF0000">指定属性</font>绑定</h2><p><code>com.example.spring_boot_04_config.bean</code>下新建Person类：  </p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="comment">//@ConfigurationProperties(prefix = "person")</span></span><br><span class="line"><span class="comment">//@Validated</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">  * &lt;bean class="Person"&gt;</span></span><br><span class="line"><span class="comment">  * &lt;property name="lastName" value="字面量/$&#123;key&#125;从环境变量、配置文件中获取值/#</span></span><br><span class="line"><span class="comment">  &#123;SpEL&#125;"&gt;&lt;/property&gt;</span></span><br><span class="line"><span class="comment">  * &lt;bean/&gt;</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  <span class="comment">//lastName必须是邮箱格式</span></span><br><span class="line">  <span class="comment">//@Email</span></span><br><span class="line">  <span class="meta">@Value</span>(<span class="string">"$&#123;person.lastName&#125;"</span>)</span><br><span class="line">  <span class="keyword">private</span> String lastName;</span><br><span class="line">  <span class="meta">@Value</span>(<span class="string">"#&#123;11*2&#125;"</span>)</span><br><span class="line">  <span class="keyword">private</span> Integer age;</span><br><span class="line">  <span class="meta">@Value</span>(<span class="string">"true"</span>)</span><br><span class="line">  <span class="keyword">private</span> Boolean boss;</span><br><span class="line">  <span class="keyword">private</span> Date birth;</span><br><span class="line">  <span class="keyword">private</span> Map&lt;String,Object&gt; maps;</span><br><span class="line">  <span class="keyword">private</span> List&lt;Object&gt; lists;</span><br><span class="line">  <span class="keyword">private</span> Dog dog;</span><br></pre></td></tr></table></figure>
 
-<h2 id="依赖写入pom-xml文件"><a href="#依赖写入pom-xml文件" class="headerlink" title="依赖写入pom.xml文件"></a>依赖写入pom.xml文件</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!‐‐导入配置文件处理器，配置文件进行绑定就会有提示‐‐&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;org.springframework.boot&lt;&#x2F;groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;spring‐boot‐configuration‐processor&lt;&#x2F;artifactId&gt;</span><br><span class="line">  &lt;optional&gt;true&lt;&#x2F;optional&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="依赖写入pom-xml文件"><a href="#依赖写入pom-xml文件" class="headerlink" title="依赖写入pom.xml文件"></a>依赖写入pom.xml文件</h2><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">!‐‐导入配置文件处理器，配置文件进行绑定就会有提示‐‐</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring‐boot‐configuration‐processor<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">optional</span>&gt;</span>true<span class="tag">&lt;/<span class="name">optional</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="全局配置文件：application-yml"><a href="#全局配置文件：application-yml" class="headerlink" title="全局配置文件：application.yml"></a>全局配置文件：application.yml</h2><pre><code>person:
     lastName: hello
     age: 18
@@ -121,16 +123,7 @@ pets: [cat,dog,pig]
 <img src="/2020/01/28/%E3%80%90SpringBoot%E3%80%91%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/pasted-4.png" class> 
 
 <h2 id="用-PropertySource与person-properties文件代替全局配置文件"><a href="#用-PropertySource与person-properties文件代替全局配置文件" class="headerlink" title="用@PropertySource与person.properties文件代替全局配置文件"></a>用<font color="#FF0000">@PropertySource</font>与<font color="#FF0000">person.properties</font>文件代替全局配置文件</h2><p>考虑到全局配置文件不宜过度冗长，因此考虑使用多个配置文件<code>xxx.properties</code>替代。<br>如将全局配置文件<code>application.properties</code>与<code>application.yml</code>中关于person的属性注释掉后，将下述需要的属性写入<code>resources</code>下的一个配置文件<code>person.properties</code>：  </p>
-<pre><code>  person.lastName=Allen
-  person.age=18
-  person.boss=false
-  person.birth=2017/12/12
-  person.maps.k1=v1
-  person.maps.k2=12
-  person.lists=tom,jane
-  person.dog.last-name=小狗
-  person.dog.age=13
-</code></pre>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">person.lastName=Allen</span><br><span class="line">person.age=<span class="number">18</span></span><br><span class="line">person.boss=<span class="keyword">false</span></span><br><span class="line">person.birth=<span class="number">2017</span>/<span class="number">12</span>/<span class="number">12</span></span><br><span class="line">person.maps.k1=v1</span><br><span class="line">person.maps.k2=<span class="number">12</span></span><br><span class="line">person.lists=tom,jane</span><br><span class="line">person.dog.last-name=小狗</span><br><span class="line">person.dog.age=<span class="number">13</span></span><br></pre></td></tr></table></figure>
 
 <img src="/2020/01/28/%E3%80%90SpringBoot%E3%80%91%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/pasted-5.png" class> 
 
@@ -303,7 +296,7 @@ pets: [cat,dog,pig]
 <span class="class">)</span>
 <span class="class"><span class="title">public</span> @<span class="title">interface</span> <span class="title">SpringBootApplication</span> </span>{</code></pre>
 <ul>
-<li>@SpringBootConfiguration<br><font color="#FF0000">@SpringBootConfigurations Spring Boot的配置类/配置文件</font>：<br>标注在某个类上，表示这是一个Spring Boot的配置类；<br>需要用@Configuration来标注这个注解。  </li>
+<li>@SpringBootConfiguration<br><font color="#FF0000">@SpringBootConfigurations是Spring Boot的配置类/配置文件</font>：<br>标注在某个类上，表示这是一个Spring Boot的配置类；<br>需要用@Configuration来标注这个注解。  </li>
 <li>@EnableAutoConfiguration<br><font color="#FF0000">@EnableAutoConfiguration开启自动配置功能</font>：<br>以前我们需要配置的东西，Spring Boot帮我们自动配置；<br>@EnableAutoConfiguration告诉Spring Boot要开启自动配置功能，这样才能生效；   <pre><code class="java"><span class="meta">@AutoConfigurationPackage</span>
 <span class="meta">@Import</span>({AutoConfigurationImportSelector<span class="class">.<span class="keyword">class</span>})</span>
 <span class="class"><span class="title">public</span> @<span class="title">interface</span> <span class="title">EnableAutoConfiguration</span> </span>{</code></pre>
