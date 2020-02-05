@@ -285,40 +285,28 @@ pets: [cat,dog,pig]
 </li>
 </ul>
 <h2 id="主程序类-主入口类"><a href="#主程序类-主入口类" class="headerlink" title="主程序类/主入口类"></a>主程序类/主入口类</h2><ul>
-<li>@SpringBootApplication<pre><code>  /*
-  用SpringBootApplication来标注一个主程序类，说明这是一个Spring Boot应用
- */
-<font color="#FF0000">@SpringBootApplication</font>
-public class SpringBoot02HelloworldApplication {
-    public static void main(String[] args) {
-        //启动spring应用
-        SpringApplication.run(SpringBoot02HelloworldApplication.class, args);
-    }
-}
-</code></pre> 
-<font color="#FF0000">@用SpringBootApplication来标注一个主程序类</font>：用Spring Boot应用来标注某个类，说明这个类是Spring Boot应用的主配置类，Spring Boot就应该运行这个类的main方法来启动应用。  <pre><code>@Target({ElementType.TYPE})
-@Retention(RetentionPolicy.RUNTIME)
-@Documented
-@Inherited
-<font color="#FF0000">@SpringBootConfiguration</font>
-<font color="#FF0000">@EnableAutoConfiguration</font>
-@ComponentScan(
-  excludeFilters = {@Filter(
+<li>@SpringBootApplication<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">   <span class="comment">/*</span></span><br><span class="line"><span class="comment">    用SpringBootApplication来标注一个主程序类，说明这是一个Spring Boot应用</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  &lt;font color=#FF0000&gt;@SpringBootApplication&lt;/font&gt;</span><br><span class="line">  <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SpringBoot02HelloworldApplication</span> </span>&#123;</span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">          <span class="comment">//启动spring应用</span></span><br><span class="line">          SpringApplication.run(SpringBoot02HelloworldApplication<span class="class">.<span class="keyword">class</span>, <span class="title">args</span>)</span>;</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<font color="#FF0000">@用SpringBootApplication来标注一个主程序类</font>：用Spring Boot应用来标注某个类，说明这个类是Spring Boot应用的主配置类，Spring Boot就应该运行这个类的main方法来启动应用。  <pre><code class="java"><span class="meta">@Target</span>({ElementType.TYPE})
+<span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)
+<span class="meta">@Documented</span>
+<span class="meta">@Inherited</span>
+&lt;font color=#FF0000&gt;@SpringBootConfiguration&lt;/font&gt;
+&lt;font color=#FF0000&gt;@EnableAutoConfiguration&lt;/font&gt;
+<span class="meta">@ComponentScan</span>(
+  excludeFilters = {<span class="meta">@Filter</span>(
   type = FilterType.CUSTOM,
-  classes = {TypeExcludeFilter.class}
-), @Filter(
-  type = FilterType.CUSTOM,
-  classes = {AutoConfigurationExcludeFilter.class}
-)}
-)
-public @interface SpringBootApplication {
-</code></pre>  
+  classes = {TypeExcludeFilter<span class="class">.<span class="keyword">class</span>}</span>
+<span class="class">), @<span class="title">Filter</span>(</span>
+<span class="class">  <span class="title">type</span> </span>= FilterType.CUSTOM,
+  classes = {AutoConfigurationExcludeFilter<span class="class">.<span class="keyword">class</span>}</span>
+<span class="class">)}</span>
+<span class="class">)</span>
+<span class="class"><span class="title">public</span> @<span class="title">interface</span> <span class="title">SpringBootApplication</span> </span>{</code></pre>
 <ul>
 <li>@SpringBootConfiguration<br><font color="#FF0000">@SpringBootConfigurations Spring Boot的配置类/配置文件</font>：<br>标注在某个类上，表示这是一个Spring Boot的配置类；<br>需要用@Configuration来标注这个注解。  </li>
-<li>@EnableAutoConfiguration<br><font color="#FF0000">@EnableAutoConfiguration开启自动配置功能</font>：<br>以前我们需要配置的东西，Spring Boot帮我们自动配置；<br>@EnableAutoConfiguration告诉Spring Boot要开启自动配置功能，这样才能生效；   <pre><code>@AutoConfigurationPackage
-@Import({AutoConfigurationImportSelector.class})
-public @interface EnableAutoConfiguration {
-</code></pre>  
+<li>@EnableAutoConfiguration<br><font color="#FF0000">@EnableAutoConfiguration开启自动配置功能</font>：<br>以前我们需要配置的东西，Spring Boot帮我们自动配置；<br>@EnableAutoConfiguration告诉Spring Boot要开启自动配置功能，这样才能生效；   <pre><code class="java"><span class="meta">@AutoConfigurationPackage</span>
+<span class="meta">@Import</span>({AutoConfigurationImportSelector<span class="class">.<span class="keyword">class</span>})</span>
+<span class="class"><span class="title">public</span> @<span class="title">interface</span> <span class="title">EnableAutoConfiguration</span> </span>{</code></pre>
 <ul>
 <li>@AutoConfigurationPackage<br><font color="#FF0000">@AutoConfigurationPackage</font>：自动配置包；  <ul>
 <li><font color="#FF0000">@Import({Registrar.class})</font>：<br>Spring的底层注解@Import，给容器中导入一个组件；<br>导入的组件由Registrar.class将主配置类（@SpringBootApplication）所在包及其所有子包扫描到Spring容器。  </li>
