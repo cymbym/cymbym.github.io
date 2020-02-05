@@ -56,7 +56,7 @@
 <meta property="og:image" content="http://yoursite.com/2020/01/22/%E3%80%90Hexo%E3%80%91Hexo-github%E6%90%AD%E5%BB%BAgithub%E5%8D%9A%E5%AE%A2/pasted-0.png">
 <meta property="og:image" content="http://yoursite.com/2020/01/22/%E3%80%90Hexo%E3%80%91Hexo-github%E6%90%AD%E5%BB%BAgithub%E5%8D%9A%E5%AE%A2/pasted-2.png">
 <meta property="article:published_time" content="2020-01-22T13:57:35.000Z">
-<meta property="article:modified_time" content="2020-01-27T17:21:52.630Z">
+<meta property="article:modified_time" content="2020-02-05T12:12:18.752Z">
 <meta property="article:author" content="Xinbin Shen">
 <meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary">
@@ -238,7 +238,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-01-28 01:21:52" itemprop="dateModified" datetime="2020-01-28T01:21:52+08:00">2020-01-28</time>
+                <time title="Modified: 2020-02-05 20:12:18" itemprop="dateModified" datetime="2020-02-05T20:12:18+08:00">2020-02-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -288,18 +288,10 @@
 <li><p><strong>安装hexo-generator-searchdb</strong><br>项目根目录下输入<code>npm install hexo-generator-searchdb --save</code>  </p>
 </li>
 <li><p><strong>增加根目录_config.yml文档中search的配置</strong><br>文档末输入 :</p>
-<pre><code>search:
-  path: search.xml
-  field: post
-  format: html
-  limit: 10000
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">	path: search.xml</span><br><span class="line">	field: post</span><br><span class="line">	format: html</span><br><span class="line">	limit: 10000</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>修改theme/next目录下_config.yml文档中local_search的配置</strong>  </p>
-<pre><code># Local search
-local_search:
-  enable: true
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># Local search</span><br><span class="line">local_search:</span><br><span class="line">	enable: true</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
@@ -308,11 +300,7 @@ local_search:
 <li><p><strong>安装hexo-deployer-git</strong><br>项目根目录下输入<code>npm install hexo-deployer-git --save</code>  </p>
 </li>
 <li><p><strong>增加根目录_config.yml文档中deploy的配置</strong><br>文档末输入 :</p>
-<pre><code>deploy:
-  type: git
-  repository: https://github.com/cymbym/cymbym.github.io
-  branch: master
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">	type: git</span><br><span class="line">	repository: https:&#x2F;&#x2F;github.com&#x2F;cymbym&#x2F;cymbym.github.io</span><br><span class="line">	branch: master</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>将本地的静态网页部署到服务器上</strong><br><code>hexo deploy</code>/<code>hexo d</code></p>
 </li>
@@ -333,9 +321,7 @@ local_search:
 <li><p><strong>启动服务器</strong><br><code>hexo server -d</code><br>在 <a href="http://localhost:4000/admin/" target="_blank" rel="noopener">http://localhost:4000/admin/</a> 中访问。</p>
 </li>
 <li><p><strong>修改根目录_config.yml文档中deploy的配置</strong><br>文档末输入 :</p>
-<pre><code>admin:
-  deployCommand: hexo-publish.bat
-</code></pre></li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">admin:</span><br><span class="line">    deployCommand: hexo-publish.bat</span><br></pre></td></tr></table></figure></li>
 <li><p><strong>创建bat文件</strong><br>项目根目录下新建<code>hexo-publish.bat</code>文件，文件内容如下：</p>
 <pre><code>hexo g -d
 </code></pre></li>
