@@ -86,7 +86,7 @@
 <meta property="og:image" content="http://yoursite.com/2020/01/24/%E3%80%90SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-40.png">
 <meta property="og:image" content="http://yoursite.com/2020/01/24/%E3%80%90SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-2.png">
 <meta property="article:published_time" content="2020-01-24T15:20:45.000Z">
-<meta property="article:modified_time" content="2020-02-05T11:45:46.509Z">
+<meta property="article:modified_time" content="2020-02-05T11:47:35.693Z">
 <meta property="article:author" content="Xinbin Shen">
 <meta property="article:tag" content="Spring Boot">
 <meta name="twitter:card" content="summary">
@@ -268,7 +268,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-05 19:45:46" itemprop="dateModified" datetime="2020-02-05T19:45:46+08:00">2020-02-05</time>
+                <time title="Modified: 2020-02-05 19:47:35" itemprop="dateModified" datetime="2020-02-05T19:47:35+08:00">2020-02-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -334,7 +334,7 @@
 <li><p><strong>编写主程序</strong><br>新建包和主程序：  </p>
 <img src="/2020/01/24/%E3%80%90SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-20.png" class>  
 <p>主程序用于启动Spring Boot应用：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">    用SpringBootApplication来标注一个主程序类，说明这是一个Spring Boot应用</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="meta">@SpringBootApplication</span></span><br><span class="line">  <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SpringBoot02HelloworldApplication</span> </span>&#123;</span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">          <span class="comment">//启动spring应用</span></span><br><span class="line">          SpringApplication.run(SpringBoot02HelloworldApplication<span class="class">.<span class="keyword">class</span>, <span class="title">args</span>)</span>;</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment">/*</span></span><br><span class="line"><span class="comment">    用SpringBootApplication来标注一个主程序类，说明这是一个Spring Boot应用</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="meta">@SpringBootApplication</span></span><br><span class="line">  <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SpringBoot02HelloworldApplication</span> </span>&#123;</span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">          <span class="comment">//启动spring应用</span></span><br><span class="line">          SpringApplication.run(SpringBoot02HelloworldApplication<span class="class">.<span class="keyword">class</span>, <span class="title">args</span>)</span>;</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <img src="/2020/01/24/%E3%80%90SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-21.png" class>
 </li>
 <li><p><strong>创建完成</strong><br>点击图中第十行的运行按钮： </p>
@@ -371,26 +371,11 @@
 <img src="/2020/01/24/%E3%80%90SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-13.png" class> 
 </li>
 <li><p><strong>在类中添加注解方法一</strong><br>为HelloController类添加<font color="#FF0000">RestController</font>注解，向SpringBoot说明这是用于响应网络请求的类，其中@RestController就是<font color="#FF0000">@Controller + @ResponseBody </font>注解的综合，后无需再加<font color="#FF0000">ResponseBody </font>；<br>通过<font color="#FF0000">GetMapping/RequestMapping</font>注解，向SpringBoot说明可以响应/hello的Get请求。 </p>
-<pre><code> /*
-  通过RestController注解，向SpringBoot说明这是一个响应网络请求的类。
- */
-@RestController
-public class HelloController {
-
-    /*
-      通过GetMapping/RequestMapping注解，向SpringBoot说明可以应/hello的Get请求。
-      由于类使用的RestController就是Controller + ResponseBody，因此返回的无需加@ResponseBody注解。
-     */
-    @GetMapping(value = "/hello")
-    public String hello() {
-        return "Hello World!!!";
-    }
-}
-</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">/*</span></span><br><span class="line"><span class="comment">  通过RestController注解，向SpringBoot说明这是一个响应网络请求的类。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">      通过GetMapping/RequestMapping注解，向SpringBoot说明可以应/hello的Get请求。</span></span><br><span class="line"><span class="comment">      由于类使用的RestController就是Controller + ResponseBody，因此返回的无需加@ResponseBody注解。</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@GetMapping</span>(value = <span class="string">"/hello"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Hello World!!!"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <img src="/2020/01/24/%E3%80%90SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-24.png" class> 
 </li>
 <li><p><strong>在类中添加注解方法二</strong><br>为HelloController类添加<font color="#FF0000">Controller</font>注解，向SpringBoot说明这是用于响应网络请求的类，后<font color="#FF0000">需加ResponseBody</font>；<br>通过<font color="#FF0000">GetMapping/RequestMapping + ResponseBody</font>注解，向SpringBoot说明可以响应/hello的Get请求。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@Controller</span><br><span class="line">public class HelloController &#123;</span><br><span class="line">    @ResponseBody</span><br><span class="line">    @RequestMapping(&quot;&#x2F;hello&quot;)</span><br><span class="line">    public String hello() &#123;</span><br><span class="line">        return &quot;Hello World!!!&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/hello"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Hello World!!!"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <img src="/2020/01/24/%E3%80%90SpringBoot%E3%80%91SpringBoot%E5%AE%89%E8%A3%85%E5%8F%8A%E4%BD%BF%E7%94%A8/pasted-22.png" class>  
 </li>
 <li><p><strong>运行</strong><br>再次点击图中第七行的运行按钮： </p>
