@@ -153,6 +153,49 @@
 随后写一个HelloController类，最后只能在 <a href="http://localhost:8084/boot02/hello" target="_blank" rel="noopener">http://localhost:8084/boot02/hello</a> 中访问，端口的最高级配置在文件1中，访问路径的最高级配置在文件4中。</li>
 <li>使用<font color="#FF0000">命令行参数</font>的形式，启动项目的时候来<font color="#FF0000">指定任意位置的配置文件</font>。<br>项目打包好以后，我们可以重构一个配置文件，放到任意位置。随后用命令行参数，在启动项目的时候来指定配置文件的新位置：<br><code>java -jar spring-boot-02-config-0.0.1-SNAPSHOT.jar --spring.config.location=G:/application.properties</code><br>此时，指定的配置文件和默认加载的这些配置文件共同起作用，形成互补配置。</li>
 </ul>
+<h2 id="外部配置加载顺序"><a href="#外部配置加载顺序" class="headerlink" title="外部配置加载顺序"></a>外部配置加载顺序</h2><p>SpringBoot也可以从以下位置加载配置；优先级从高到低，高优先级的配置覆盖低优先级的配置；所有的配置会形成互补配置。  </p>
+<ul>
+<li><p><strong>命令行参数</strong><br>所有的配置都可以在命令行上进行指定：<br><code>java -jar spring-boot-02-config-0.0.1-SNAPSHOT.jar --server.port=8087 --server.servlet.context-path=/abc</code><br>采用<code>--配置项=值</code>，多个配置用空格分开。<br>此时配置已更新：<br><img src="/2020/01/28/%E3%80%90SpringBoot%E3%80%91%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/%5Cimages%5Cpasted-15.png" alt="upload successful"></p>
+</li>
+<li><p><strong>来自java:comp/env的JNDI属性</strong>  </p>
+</li>
+<li><p><strong>Java系统属性（System.getProperties()）</strong>  </p>
+</li>
+<li><p><strong>操作系统环境变量</strong>   </p>
+</li>
+<li><p><strong>RandomValuePropertySource配置的random.*    属性值</strong> </p>
+</li>
+<li><p><strong>由jar包外向jar包内进行寻找：</strong>  </p>
+<ul>
+<li><p>优先加载带profile：  </p>
+<ul>
+<li>jar包外部的<code>application-{profile}.properties</code>或<code>application.yml(带spring.profile)</code>配置文件；  </li>
+<li>jar包内部的<code>application-{profile}.properties</code>或<code>application.yml(带spring.profile)</code>配置文件。   </li>
+</ul>
+</li>
+<li><p>再来加载不带profile：  </p>
+<ul>
+<li>jar包外部的<code>application.properties</code>或<code>application.yml(不带spring.profile)</code>配置文件；   </li>
+<li>jar包内部的<code>application.properties</code>或<code>application.yml(不带spring.profile)</code>配置文件。  </li>
+</ul>
+</li>
+<li><p>同一路径下，下述带spring.profile的application.yml先发挥作用，后是application.properties，最后是application-dev.properties<br><img src="/2020/01/28/%E3%80%90SpringBoot%E3%80%91%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/%5Cimages%5Cpasted-16.png" alt="upload successful"></p>
+</li>
+</ul>
+</li>
+<li><p><strong>@Configuration注解类上的@PropertySource</strong> </p>
+</li>
+<li><p><strong>通过SpringApplication.setDefaultProperties指定的默认属性</strong><br>所有支持的配置加载来源。</p>
+</li>
+</ul>
+<h2 id="Spring-Boot自动配置原理"><a href="#Spring-Boot自动配置原理" class="headerlink" title="Spring Boot自动配置原理"></a>Spring Boot自动配置原理</h2><p>精髓：</p>
+<ul>
+<li>SpringBoot启动会加载大量的自动配置类;  </li>
+<li>我们看我们需要的功能有没有SpringBoot默认写好的自动配置类；  </li>
+<li>我们再来看这个自动配置类中到底配置了哪些组件；（只要我们要用的组件有，我们就不需要再来配置了）</li>
+<li>给容器中自动配置类添加组件的时候，会从properties类中获取某些属性。我们就可以在配置文件中指定这些属性的值。</li>
+</ul>
+<h1 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h1><p>关于Spring Boot配置文件的使用，也可以查看其他关于相关文章。<br><a href="https://www.bilibili.com/video/av38657363?p=18" target="_blank" rel="noopener">Spring Boot自动配置原理B站视频</a><br><a href="https://docs.spring.io/spring-boot/docs/1.5.9.RELEASE/reference/htmlsingle/#boot-features-external-config" target="_blank" rel="noopener">Spring Boot官方文档：配置文件部分</a></p>
 ]]></content>
   </entry>
   <entry>
