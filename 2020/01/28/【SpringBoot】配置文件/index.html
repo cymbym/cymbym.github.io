@@ -65,12 +65,12 @@
 <meta property="og:image" content="http://yoursite.com/2020/01/28/%E3%80%90SpringBoot%E3%80%91%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/pasted-7.png">
 <meta property="og:image" content="http://yoursite.com/2020/01/28/%E3%80%90SpringBoot%E3%80%91%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/pasted-9.png">
 <meta property="og:image" content="http://yoursite.com/2020/01/28/%E3%80%90SpringBoot%E3%80%91%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/pasted-10.png">
-<meta property="og:image" content="http://yoursite.com/2020/01/28/%E3%80%90SpringBoot%E3%80%91%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/%5Cimages%5Cpasted-13.png">
-<meta property="og:image" content="http://yoursite.com/2020/01/28/%E3%80%90SpringBoot%E3%80%91%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/%5Cimages%5Cpasted-14.png">
-<meta property="og:image" content="http://yoursite.com/2020/01/28/%E3%80%90SpringBoot%E3%80%91%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/%5Cimages%5Cpasted-15.png">
-<meta property="og:image" content="http://yoursite.com/2020/01/28/%E3%80%90SpringBoot%E3%80%91%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/%5Cimages%5Cpasted-16.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/28/%E3%80%90SpringBoot%E3%80%91%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/pasted-13.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/28/%E3%80%90SpringBoot%E3%80%91%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/pasted-14.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/28/%E3%80%90SpringBoot%E3%80%91%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/pasted-15.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/28/%E3%80%90SpringBoot%E3%80%91%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/pasted-16.png">
 <meta property="article:published_time" content="2020-01-28T07:34:18.000Z">
-<meta property="article:modified_time" content="2020-02-06T15:33:07.965Z">
+<meta property="article:modified_time" content="2020-02-06T15:42:11.542Z">
 <meta property="article:author" content="Xinbin Shen">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/2020/01/28/%E3%80%90SpringBoot%E3%80%91%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/pasted-0.png">
@@ -251,7 +251,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-06 23:33:07" itemprop="dateModified" datetime="2020-02-06T23:33:07+08:00">2020-02-06</time>
+                <time title="Modified: 2020-02-06 23:42:11" itemprop="dateModified" datetime="2020-02-06T23:42:11+08:00">2020-02-06</time>
               </span>
 
           
@@ -401,7 +401,7 @@
 <li><p>Jar包命令行参数：  </p>
 <ul>
 <li>在炸包后，在命令行中对包执行：<br><code>java -jar spring-boot-02-config-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod</code>  </li>
-<li>或者在Run/Debug Configuration中将arguments设置为：<br><code>--spring.profiles.active=prod</code><br><img src="/2020/01/28/%E3%80%90SpringBoot%E3%80%91%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/%5Cimages%5Cpasted-13.png" alt="upload successful"></li>
+<li>或者在Run/Debug Configuration中将arguments设置为：<br><code>--spring.profiles.active=prod</code><img src="/2020/01/28/%E3%80%90SpringBoot%E3%80%91%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/pasted-13.png" class>  </li>
 <li>实现在测试的时候，配置传入命令行参数。此时生效的是<code>application-prod.properties/yml</code>的配置，后是<code>其他配置文件(按优先级)中prod文档块</code>的配置。 </li>
 </ul>
 </li>
@@ -409,7 +409,7 @@
 </li>
 </ul>
 <h2 id="配置文件加载位置"><a href="#配置文件加载位置" class="headerlink" title="配置文件加载位置"></a>配置文件加载位置</h2><ul>
-<li>Spring Boot启动会扫描以下位置的<code>application.properties/yml</code>文件作为Spring Boot的默认配置文件。<br>–file:./config/<br>–file:./<br>–classpath:/config/<br>–classpath:/<br>优先级<font color="#FF0000">由高到底</font>，高优先级的配置会覆盖低优先级的配置。即下图所示：<br><img src="/2020/01/28/%E3%80%90SpringBoot%E3%80%91%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/%5Cimages%5Cpasted-14.png" alt="upload successful"></li>
+<li>Spring Boot启动会扫描以下位置的<code>application.properties/yml</code>文件作为Spring Boot的默认配置文件。<br>–file:./config/<br>–file:./<br>–classpath:/config/<br>–classpath:/<br>优先级<font color="#FF0000">由高到底</font>，高优先级的配置会覆盖低优先级的配置。即下图所示：  <img src="/2020/01/28/%E3%80%90SpringBoot%E3%80%91%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/pasted-14.png" class> </li>
 <li>SpringBoot会从这四个位置全部加载主配置文件，<font color="#FF0000">互补配置</font>。<br>如在上图的4中，写入如下配置：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">server.port=<span class="number">8081</span></span><br><span class="line">#配置项目的访问路径</span><br><span class="line">server.servlet.context-path=/boot02</span><br></pre></td></tr></table></figure>
 在上图的1中，写入如下配置：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server.port=<span class="number">8084</span></span><br></pre></td></tr></table></figure>
 随后写一个HelloController类，最后只能在 <a href="http://localhost:8084/boot02/hello" target="_blank" rel="noopener">http://localhost:8084/boot02/hello</a> 中访问，端口的最高级配置在文件1中，访问路径的最高级配置在文件4中。</li>
@@ -417,8 +417,8 @@
 </ul>
 <h2 id="外部配置加载顺序"><a href="#外部配置加载顺序" class="headerlink" title="外部配置加载顺序"></a>外部配置加载顺序</h2><p>SpringBoot也可以从以下位置加载配置；优先级从高到低，高优先级的配置覆盖低优先级的配置；所有的配置会形成互补配置。  </p>
 <ul>
-<li><p><strong>命令行参数</strong><br>所有的配置都可以在命令行上进行指定：<br><code>java -jar spring-boot-02-config-0.0.1-SNAPSHOT.jar --server.port=8087 --server.servlet.context-path=/abc</code><br>采用<code>--配置项=值</code>，多个配置用空格分开。<br>此时配置已更新：<br><img src="/2020/01/28/%E3%80%90SpringBoot%E3%80%91%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/%5Cimages%5Cpasted-15.png" alt="upload successful"></p>
-</li>
+<li><p><strong>命令行参数</strong><br>所有的配置都可以在命令行上进行指定：<br><code>java -jar spring-boot-02-config-0.0.1-SNAPSHOT.jar --server.port=8087 --server.servlet.context-path=/abc</code><br>采用<code>--配置项=值</code>，多个配置用空格分开。<br>此时配置已更新：</p>
+<img src="/2020/01/28/%E3%80%90SpringBoot%E3%80%91%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/pasted-15.png" class> </li>
 <li><p><strong>来自java:comp/env的JNDI属性</strong>  </p>
 </li>
 <li><p><strong>Java系统属性（System.getProperties()）</strong>  </p>
@@ -441,8 +441,8 @@
 <li>jar包内部的<code>application.properties</code>或<code>application.yml(不带spring.profile)</code>配置文件。  </li>
 </ul>
 </li>
-<li><p>同一路径下，下述带spring.profile的application.yml先发挥作用，后是application.properties，最后是application-dev.properties<br><img src="/2020/01/28/%E3%80%90SpringBoot%E3%80%91%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/%5Cimages%5Cpasted-16.png" alt="upload successful"></p>
-</li>
+<li><p>同一路径下，下述带spring.profile的application.yml先发挥作用，后是application.properties，最后是application-dev.properties</p>
+<img src="/2020/01/28/%E3%80%90SpringBoot%E3%80%91%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/pasted-16.png" class> </li>
 </ul>
 </li>
 <li><p><strong>@Configuration注解类上的@PropertySource</strong> </p>
