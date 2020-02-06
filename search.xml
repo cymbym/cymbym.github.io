@@ -197,6 +197,12 @@
 </ul>
 <h1 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h1><p>关于Spring Boot配置文件的使用，也可以查看其他关于相关文章。<br><a href="https://www.bilibili.com/video/av38657363?p=18" target="_blank" rel="noopener">Spring Boot自动配置原理B站视频</a><br><a href="https://docs.spring.io/spring-boot/docs/1.5.9.RELEASE/reference/htmlsingle/#boot-features-external-config" target="_blank" rel="noopener">Spring Boot官方文档：配置文件部分</a></p>
 ]]></content>
+      <categories>
+        <category>Spring Boot</category>
+      </categories>
+      <tags>
+        <tag>Spring Boot</tag>
+      </tags>
   </entry>
   <entry>
     <title>【SpringBoot】SpringBoot安装及使用</title>
