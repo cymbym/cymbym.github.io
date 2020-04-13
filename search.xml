@@ -1,6 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【算法题】排序算法</title>
+    <url>/2020/04/13/%E7%AE%97%E6%B3%95%E9%A2%98%E3%80%91%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-1/</url>
+    <content><![CDATA[<h1 id="排序算法总结"><a href="#排序算法总结" class="headerlink" title="排序算法总结"></a>排序算法总结</h1><h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><table>
+<thead>
+<tr>
+<th>算法</th>
+<th>时间复杂度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>冒泡排序</td>
+<td>O(n^2)</td>
+</tr>
+<tr>
+<td>选择排序</td>
+<td>O(n^2)</td>
+</tr>
+<tr>
+<td>插入排序</td>
+<td>O(n^2)</td>
+</tr>
+<tr>
+<td>希尔排序</td>
+<td>O(n^1.5)</td>
+</tr>
+<tr>
+<td>快速排序</td>
+<td>O(N*logN)</td>
+</tr>
+<tr>
+<td>归并排序</td>
+<td>O(N*logN)</td>
+</tr>
+<tr>
+<td>堆排序</td>
+<td>O(N*logN)</td>
+</tr>
+</tbody></table>
+<a id="more"></a> 
+<h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubble</span><span class="params">(Integer[] arr)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i ++) &#123;</span><br><span class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; arr.length - i - <span class="number">1</span>; j ++) &#123; <span class="comment">//在n-i个数里两两交换，将第i+1大的数归位</span></span><br><span class="line">               <span class="keyword">if</span> (arr[j + <span class="number">1</span>] &lt; arr[j]) &#123;</span><br><span class="line">                   <span class="keyword">int</span> tmp = arr[j + <span class="number">1</span>];</span><br><span class="line">                   arr[j + <span class="number">1</span>] = arr[j];</span><br><span class="line">                   arr[j] = tmp;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       System.out.println(<span class="string">"bubble:"</span>);</span><br><span class="line">       Arrays.asList(arr).forEach(a -&gt; System.out.println(a));</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selction</span><span class="params">(Integer[] arr)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i ++) &#123;</span><br><span class="line">           <span class="keyword">int</span> inx = i;  <span class="comment">//最小值的索引</span></span><br><span class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt; arr.length; j ++) &#123;  <span class="comment">//不断在n-i个数里找出第i小的数的位置，并将其归位</span></span><br><span class="line">               <span class="keyword">if</span> (arr[j] &lt; arr[inx]) inx = j;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">if</span> (inx != i) &#123;</span><br><span class="line">               <span class="keyword">int</span> tmp = arr[i];</span><br><span class="line">               arr[i] = arr[inx];</span><br><span class="line">               arr[inx] = tmp;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       System.out.println(<span class="string">"selction:"</span>);</span><br><span class="line">       Arrays.asList(arr).forEach(a -&gt; System.out.println(a));</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">insertion</span><span class="params">(Integer[] arr)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; arr.length; i ++) &#123;</span><br><span class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j - <span class="number">1</span> &gt;= <span class="number">0</span>; j --) &#123; <span class="comment">//在第二层循环里把arr[i]往前插入</span></span><br><span class="line">               <span class="keyword">if</span> (arr[j] &lt; arr[j-<span class="number">1</span>]) &#123;</span><br><span class="line">                   <span class="keyword">int</span> tmp = arr[j];</span><br><span class="line">                   arr[j] = arr[j-<span class="number">1</span>];</span><br><span class="line">                   arr[j-<span class="number">1</span>] = tmp;</span><br><span class="line">               &#125; <span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       System.out.println(<span class="string">"insertion:"</span>);</span><br><span class="line">       Arrays.asList(arr).forEach(a -&gt; System.out.println(a));</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Shell</span><span class="params">(Integer[] arr)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> beta = arr.length / <span class="number">2</span>;     <span class="comment">//不断用二分法取增量</span></span><br><span class="line">       <span class="keyword">while</span> (beta &gt; <span class="number">0</span>) &#123;</span><br><span class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; beta; i ++) &#123;   <span class="comment">//beta下对应的组数</span></span><br><span class="line">               <span class="keyword">for</span> (<span class="keyword">int</span> j = i + beta; j &lt; arr.length; j += beta) &#123;  <span class="comment">//每组采用插入排序</span></span><br><span class="line">                   <span class="keyword">for</span> (<span class="keyword">int</span> k = j; k - beta &gt;= <span class="number">0</span>; k -= beta) &#123;</span><br><span class="line">                       <span class="keyword">if</span> (arr[k] &lt; arr[k - beta]) &#123;</span><br><span class="line">                           <span class="keyword">int</span> tmp = arr[k];</span><br><span class="line">                           arr[k] = arr[k - beta];</span><br><span class="line">                           arr[k - beta] = tmp;</span><br><span class="line">                       &#125; <span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">                   &#125;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">           beta /= <span class="number">2</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       System.out.println(<span class="string">"shell:"</span>);</span><br><span class="line">       Arrays.asList(arr).forEach(a -&gt; System.out.println(a));</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Integer[] swap(Integer[] arr, <span class="keyword">int</span> i, <span class="keyword">int</span> j)  &#123;</span><br><span class="line">        <span class="keyword">int</span> tmp = arr[i];</span><br><span class="line">        arr[i] = arr[j];</span><br><span class="line">        arr[j] = tmp;</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">qSort</span><span class="params">(Integer[] arr, <span class="keyword">int</span> l, <span class="keyword">int</span> R)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = l, j = R;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">            <span class="keyword">while</span> (i &lt; j &amp;&amp; arr[j] &gt;= arr[i]) j --;</span><br><span class="line">            arr = swap(arr, i, j);</span><br><span class="line">            <span class="keyword">while</span> (i &lt; j &amp;&amp; arr[j] &gt;= arr[i]) i ++;</span><br><span class="line">            arr = swap(arr, i, j);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (i &gt; l + <span class="number">1</span>) qSort(arr, <span class="number">0</span>, i - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span> (j &lt; R - <span class="number">1</span>) qSort(arr, j + <span class="number">1</span>, arr.length - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Quick</span><span class="params">(Integer[] arr)</span> </span>&#123;</span><br><span class="line">        qSort(arr, <span class="number">0</span>, arr.length - <span class="number">1</span>);</span><br><span class="line">        System.out.println(<span class="string">"quick:"</span>);</span><br><span class="line">        Arrays.asList(arr).forEach(a -&gt; System.out.println(a));</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.runoob.com/w3cnote/sort-algorithm-summary.html" target="_blank" rel="noopener">菜鸟教程——排序算法</a></p>
+]]></content>
+      <categories>
+        <category>算法题</category>
+      </categories>
+      <tags>
+        <tag>sort</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【算法题】股票买卖</title>
     <url>/2020/04/11/%E7%AE%97%E6%B3%95%E9%A2%98%E3%80%91%E8%82%A1%E7%A5%A8%E4%B9%B0%E5%8D%96/</url>
     <content><![CDATA[<h1 id="股票买卖汇总"><a href="#股票买卖汇总" class="headerlink" title="股票买卖汇总"></a>股票买卖汇总</h1><p><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/" target="_blank" rel="noopener">当只能进行一次交易时</a><br><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/" target="_blank" rel="noopener">当可以进行无穷多次交易时</a><br><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/" target="_blank" rel="noopener">当可以进行两次交易时</a><br><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iv/" target="_blank" rel="noopener">当可以进行k次交易</a><br><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/" target="_blank" rel="noopener">当可以进行无穷多次交易且含冷冻期</a><br><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/" target="_blank" rel="noopener">当可以进行无穷多次交易且需手续费</a><br> <a id="more"></a> </p>
