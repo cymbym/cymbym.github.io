@@ -2,43 +2,8 @@
 <search>
   <entry>
     <title>【算法题】排序算法</title>
-    <url>/2020/04/13/%E7%AE%97%E6%B3%95%E9%A2%98%E3%80%91%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-1/</url>
-    <content><![CDATA[<h1 id="排序算法总结"><a href="#排序算法总结" class="headerlink" title="排序算法总结"></a>排序算法总结</h1><h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><table>
-<thead>
-<tr>
-<th>算法</th>
-<th>时间复杂度</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>冒泡排序</td>
-<td>O(n^2)</td>
-</tr>
-<tr>
-<td>选择排序</td>
-<td>O(n^2)</td>
-</tr>
-<tr>
-<td>插入排序</td>
-<td>O(n^2)</td>
-</tr>
-<tr>
-<td>希尔排序</td>
-<td>O(n^1.5)</td>
-</tr>
-<tr>
-<td>快速排序</td>
-<td>O(N*logN)</td>
-</tr>
-<tr>
-<td>归并排序</td>
-<td>O(N*logN)</td>
-</tr>
-<tr>
-<td>堆排序</td>
-<td>O(N*logN)</td>
-</tr>
-</tbody></table>
+    <url>/2020/04/13/%E3%80%90%E7%AE%97%E6%B3%95%E9%A2%98%E3%80%91%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="排序算法总结"><a href="#排序算法总结" class="headerlink" title="排序算法总结"></a>排序算法总结</h1><h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><img src="/2020/04/13/%E3%80%90%E7%AE%97%E6%B3%95%E9%A2%98%E3%80%91%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/pasted-28.png" class>  
 <a id="more"></a> 
 <h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubble</span><span class="params">(Integer[] arr)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i ++) &#123;</span><br><span class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; arr.length - i - <span class="number">1</span>; j ++) &#123; <span class="comment">//在n-i个数里两两交换，将第i+1大的数归位</span></span><br><span class="line">               <span class="keyword">if</span> (arr[j + <span class="number">1</span>] &lt; arr[j]) &#123;</span><br><span class="line">                   <span class="keyword">int</span> tmp = arr[j + <span class="number">1</span>];</span><br><span class="line">                   arr[j + <span class="number">1</span>] = arr[j];</span><br><span class="line">                   arr[j] = tmp;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       System.out.println(<span class="string">"bubble:"</span>);</span><br><span class="line">       Arrays.asList(arr).forEach(a -&gt; System.out.println(a));</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 
@@ -61,7 +26,7 @@
   </entry>
   <entry>
     <title>【算法题】股票买卖</title>
-    <url>/2020/04/11/%E7%AE%97%E6%B3%95%E9%A2%98%E3%80%91%E8%82%A1%E7%A5%A8%E4%B9%B0%E5%8D%96/</url>
+    <url>/2020/04/11/%E3%80%90%E7%AE%97%E6%B3%95%E9%A2%98%E3%80%91%E8%82%A1%E7%A5%A8%E4%B9%B0%E5%8D%96/</url>
     <content><![CDATA[<h1 id="股票买卖汇总"><a href="#股票买卖汇总" class="headerlink" title="股票买卖汇总"></a>股票买卖汇总</h1><p><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/" target="_blank" rel="noopener">当只能进行一次交易时</a><br><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/" target="_blank" rel="noopener">当可以进行无穷多次交易时</a><br><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/" target="_blank" rel="noopener">当可以进行两次交易时</a><br><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iv/" target="_blank" rel="noopener">当可以进行k次交易</a><br><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/" target="_blank" rel="noopener">当可以进行无穷多次交易且含冷冻期</a><br><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/" target="_blank" rel="noopener">当可以进行无穷多次交易且需手续费</a><br> <a id="more"></a> </p>
 <h2 id="状态定义"><a href="#状态定义" class="headerlink" title="状态定义"></a>状态定义</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">dp[i][k][0 or 1]</span><br><span class="line">0 &lt;&#x3D; i &lt;&#x3D; n-1, 1 &lt;&#x3D; k &lt;&#x3D; K</span><br><span class="line">n 为天数，大 K 为最多交易数</span><br><span class="line">此问题共 n × K × 2 种状态，全部穷举就能搞定。</span><br><span class="line"></span><br><span class="line">for 0 &lt;&#x3D; i &lt; n:</span><br><span class="line">    for 1 &lt;&#x3D; k &lt;&#x3D; K:</span><br><span class="line">        for s in &#123;0, 1&#125;:</span><br><span class="line">            dp[i][k][s] &#x3D; max(buy, sell, rest)</span><br></pre></td></tr></table></figure>
 <h2 id="状态转移"><a href="#状态转移" class="headerlink" title="状态转移"></a>状态转移</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">dp[i][k][0] &#x3D; max(dp[i-1][k][0], dp[i-1][k][1] + prices[i])</span><br><span class="line">              max(   选择 rest  ,           选择 sell      )</span><br><span class="line"></span><br><span class="line">解释：今天我没有持有股票，有两种可能：</span><br><span class="line">要么是我昨天就没有持有，然后今天选择 rest，所以我今天还是没有持有；</span><br><span class="line">要么是我昨天持有股票，但是今天我 sell 了，所以我今天没有持有股票了。</span><br><span class="line"></span><br><span class="line">dp[i][k][1] &#x3D; max(dp[i-1][k][1], dp[i-1][k-1][0] - prices[i])</span><br><span class="line">              max(   选择 rest  ,           选择 buy         )</span><br><span class="line"></span><br><span class="line">解释：今天我持有着股票，有两种可能：</span><br><span class="line">要么我昨天就持有着股票，然后今天选择 rest，所以我今天还持有着股票；</span><br><span class="line">要么我昨天本没有持有，但今天我选择 buy，所以今天我就持有股票了。</span><br></pre></td></tr></table></figure>
