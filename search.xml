@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【算法题】打家劫舍</title>
+    <url>/2020/04/20/%E7%AE%97%E6%B3%95%E9%A2%98%E3%80%91%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D/</url>
+    <content><![CDATA[<h1 id="打家劫舍汇总"><a href="#打家劫舍汇总" class="headerlink" title="打家劫舍汇总"></a>打家劫舍汇总</h1><p><a href="https://leetcode-cn.com/problems/house-robber/" target="_blank" rel="noopener">数组</a><br><a href="https://leetcode-cn.com/problems/house-robber-ii/" target="_blank" rel="noopener">环路</a><br><a href="https://leetcode-cn.com/problems/house-robber-iii/" target="_blank" rel="noopener">二叉树</a></p>
+<a id="more"></a>
+
+<h1 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h1><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>思路：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;&#96;&#96;</span><br><span class="line">详解：</span><br><span class="line">&#96;&#96;&#96;java</span><br></pre></td></tr></table></figure>
+
+<h2 id="环路"><a href="#环路" class="headerlink" title="环路"></a>环路</h2><p>思路：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;&#96;&#96;</span><br><span class="line">详解：</span><br><span class="line">&#96;&#96;&#96;java</span><br></pre></td></tr></table></figure>
+
+<h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><p>思路：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1、每个节点可选择偷或者不偷两种状态，根据题目意思，相连节点不能一起偷。</span><br><span class="line">【当前节点选择偷时】那么两个孩子节点就不能选择偷了</span><br><span class="line">【当前节点选择不偷时】两个孩子节点只需要拿最多的钱出来就行(两个孩子节点偷不偷没关系)</span><br><span class="line"></span><br><span class="line">2、我们使用一个大小为 2 的数组来表示 int[] res &#x3D; new int[2]。0 代表不偷，1 代表偷。</span><br><span class="line"></span><br><span class="line">3、任何一个节点能偷到的最大钱的状态可以定义为：</span><br><span class="line">【当前节点选择不偷】当前节点能偷到的最大钱数 &#x3D; 左孩子能偷到的钱 + 右孩子能偷到的钱</span><br><span class="line">【当前节点选择偷】当前节点能偷到的最大钱数 &#x3D; 左孩子选择自己不偷时能得到的钱 + 右孩子选择不偷时能得到的钱 + 当前节点的钱数</span><br><span class="line"></span><br><span class="line">4、表示为公式如下</span><br><span class="line">root[0] &#x3D; Math.max(rob(root.left)[0], rob(root.left)[1]) + Math.max(rob(root.right)[0], rob(root.right)[1])</span><br><span class="line">root[1] &#x3D; rob(root.left)[0] + rob(root.right)[0] + root.val;</span><br></pre></td></tr></table></figure>
+<p>详解：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode left;</span></span><br><span class="line"><span class="comment"> *     TreeNode right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">rob</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] res = helpRob(root);</span><br><span class="line">        <span class="keyword">return</span> Math.max(res[<span class="number">0</span>], res[<span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] helpRob(TreeNode root) &#123;</span><br><span class="line">        <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> res;</span><br><span class="line">        <span class="keyword">int</span>[] left = helpRob(root.left);</span><br><span class="line">        <span class="keyword">int</span>[] right = helpRob(root.right);</span><br><span class="line">        res[<span class="number">0</span>] = Math.max(left[<span class="number">0</span>], left[<span class="number">1</span>]) + Math.max(right[<span class="number">0</span>], right[<span class="number">1</span>]);</span><br><span class="line">        res[<span class="number">1</span>] = left[<span class="number">0</span>] + right[<span class="number">0</span>] + root.val;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://blog.csdn.net/zangdaiyang1991/article/details/94561641" target="_blank" rel="noopener">CSDN 打家劫舍III(Java)</a></p>
+]]></content>
+      <categories>
+        <category>算法题</category>
+      </categories>
+      <tags>
+        <tag>LC</tag>
+        <tag>DP</tag>
+        <tag>打家劫舍</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【算法题】排序算法</title>
     <url>/2020/04/13/%E3%80%90%E7%AE%97%E6%B3%95%E9%A2%98%E3%80%91%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<h1 id="排序算法总结"><a href="#排序算法总结" class="headerlink" title="排序算法总结"></a>排序算法总结</h1><h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><img src="/2020/04/13/%E3%80%90%E7%AE%97%E6%B3%95%E9%A2%98%E3%80%91%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/pasted-28.png" class>  
