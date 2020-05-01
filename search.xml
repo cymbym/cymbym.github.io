@@ -3,7 +3,15 @@
   <entry>
     <title>【面经】暑期实习系列</title>
     <url>/2020/04/24/%E3%80%90%E9%9D%A2%E7%BB%8F%E3%80%91%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0%E7%B3%BB%E5%88%97/</url>
-    <content><![CDATA[<h1 id="2020年4月暑期实习"><a href="#2020年4月暑期实习" class="headerlink" title="2020年4月暑期实习"></a>2020年4月暑期实习</h1><a id="more"></a>
+    <content><![CDATA[<h1 id="2020年4月暑期实习"><a href="#2020年4月暑期实习" class="headerlink" title="2020年4月暑期实习"></a>2020年4月暑期实习</h1><h2 id="面试周期"><a href="#面试周期" class="headerlink" title="面试周期"></a>面试周期</h2><ul>
+<li><strong>【时间线】</strong>2020年4月。<br>【三月底】开始和群里的小伙伴们投非阿里腾讯字节的厂，当作试试水了。<br>【4月上旬】主要处于360、美团、网易、快手、携程等的笔试阶段（第一次笔试360就凉了真尴尬啊，携程笔试已通过一个月了还不发起面试emmm）。同时以美团的两次面试开始了自己的征程。<br>【4月13日】有了美团的积累后，这一周开始投递心仪的大厂，也迎来了第一个面试高峰：阿里一面+腾讯的三天三面。<br>【4月20日】自己太喜欢鹅了，导致这周自己非常非常懈怠，然后遭遇网易京东快手面试的暴击。随后字节的三次面试算是给自己的暑期实习之旅划上一个句号吧。</li>
+</ul>
+<a id="more"></a>
+<h2 id="准备周期"><a href="#准备周期" class="headerlink" title="准备周期"></a>准备周期</h2><ul>
+<li><strong>【关于算法】</strong> 2019年在实验室两次写完论文后的摸鱼期。<br>刷完了LC的easy，大概200+题。后期在笔试时感觉easy刷多了，medium和hard刷少了。。。。简单的题能很快有思路，复杂的题就容易绕进去。秋招前必须好好复习刷过的题+多刷medium了。  </li>
+<li><strong>【关于项目】</strong>2020年2~3月。<br>因为之前没有实习经历，没有Java项目。所以在周围小伙伴们开始投简历，开始各种提前批面试时，自己选择了先按兵不动，让简历上挂点东西。即使是很low被学烂了的员工管理平台和秒杀商城项目，也一定要多看视频多看博客，学会思考项目中的种种不足及应对的措施，自己当甲方提需求+当乙方改bug。</li>
+<li><strong>【关于基础】</strong>2020年4月上旬。<br>很多关于Java SE、Java EE、计算机网络、操作系统、数据库、算法和数据结构，这些的积累基本上是在四月上旬，通过查看小伙伴的面经+牛客网的面经来查缺补漏的。</li>
+</ul>
 <h1 id="美团一面-视频面试"><a href="#美团一面-视频面试" class="headerlink" title="美团一面 视频面试"></a>美团一面 视频面试</h1><h2 id="0404-15-00-65min"><a href="#0404-15-00-65min" class="headerlink" title="0404 15:00 65min"></a>0404 15:00 65min</h2><ol>
 <li>说说你常用的集合 </li>
 <li>hashmap的实现<br><a href="https://blog.csdn.net/weixin_44460333/article/details/86770169" target="_blank" rel="noopener">CSDN博客：HashMap？ConcurrentHashMap？相信看完这篇没人能难住你</a></li>
@@ -65,8 +73,9 @@
 <li>cpp【先说用得少不太记得了hhh  </li>
 <li>垃圾回收   </li>
 <li>通信专业学计算机？  </li>
-<li>对转go或者做全栈的看法<h2 id="小结-3"><a href="#小结-3" class="headerlink" title="小结"></a>小结</h2>原本的一面面试官有事，于是临时换了个人来面。因为不是正式面试官，所以每个方面都只问一个题，有丶像简历面，看你知识面。交谈过程中还是挺融洽的。</li>
+<li>对转go或者做全栈的看法</li>
 </ol>
+<h2 id="小结-3"><a href="#小结-3" class="headerlink" title="小结"></a>小结</h2><p>原本的一面面试官有事，于是临时换了个人来面。因为不是正式面试官，所以每个方面都只问一个题，有丶像简历面，看你知识面。交谈过程中还是挺融洽的。</p>
 <h1 id="腾讯一面-下半场-视频面试"><a href="#腾讯一面-下半场-视频面试" class="headerlink" title="腾讯一面 下半场 视频面试"></a>腾讯一面 下半场 视频面试</h1><h2 id="0415-17-00-60min"><a href="#0415-17-00-60min" class="headerlink" title="0415 17:00 60min"></a>0415 17:00 60min</h2><ol>
 <li>项目</li>
 <li>【代码】无符号数中1的个数  <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//求32位无符号整数k的二进制表示中1的个数，比如k = 5（101）时，返回2，k =7（111）时，返回3</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binSum</span><span class="params">(<span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> res =<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (k != <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> ((k &amp; <span class="number">1</span>) != <span class="number">0</span>) res ++;</span><br><span class="line">		n = n&gt;&gt;&gt;<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
@@ -82,16 +91,18 @@
 <li>HTTP2.0了解吗  </li>
 <li>关于这种知识是从哪些渠道获取的  </li>
 <li>迪杰斯特拉算法，结合滴滴打车<br><a href="https://www.jianshu.com/p/efcd21494dff" target="_blank" rel="noopener">简书：图的基本算法（最小生成树,Prim+Kruskal）</a><br><a href="https://www.jianshu.com/p/959e270cb850" target="_blank" rel="noopener">简书：求解图的最短路径(Dijkstra+Floyd)</a><br><a href="https://www.bbsmax.com/A/mo5k0ZwLdw/" target="_blank" rel="noopener">图论篇3——最短路径 Dijkstra算法、Floyd算法</a><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Prim【选近点】：从任意一个顶点开始，每次选择一个【与当前顶点集最近的一个顶点】，并将两顶点之间的边加入到树中。  </span><br><span class="line">Kruskal【选小边】：先加所有点，接着【按边从小到大使点生效】。  </span><br><span class="line">Dijkstra【一对多】：用于给定起始点，【不断更新求该点到其余点的最短路径】的图问题。  </span><br><span class="line">Floyd【多对多】：利用动态规划，在【两点之间加入中转】。是求解图中任意两点间最短路径的算法。</span><br></pre></td></tr></table></figure></li>
-<li>找中位数 【快排取一半的范围<h2 id="小结-5"><a href="#小结-5" class="headerlink" title="小结"></a>小结</h2>第一次面试过程如此迅速，导致自己也不知道是被认可了还是要凉了。直到后来看到官网更新为hr面+一面面试官加微信告知连过两面了。</li>
+<li>找中位数 【快排取一半的范围</li>
 </ol>
+<h2 id="小结-5"><a href="#小结-5" class="headerlink" title="小结"></a>小结</h2><p>第一次面试过程如此迅速，导致自己也不确定是被认可了还是要凉了。直到后来看到官网更新为hr面+一面面试官加微信告知连过两面了。</p>
 <h1 id="腾讯HR面-电话面试"><a href="#腾讯HR面-电话面试" class="headerlink" title="腾讯HR面 电话面试"></a>腾讯HR面 电话面试</h1><h2 id="0417-16-00-19min"><a href="#0417-16-00-19min" class="headerlink" title="0417 16:00 19min"></a>0417 16:00 19min</h2><ol>
 <li>项目介绍  </li>
 <li>最自豪的项目  </li>
 <li>学校里参加的非专业的活动  </li>
 <li>啥时候能实习  </li>
 <li>拿了啥offer  </li>
-<li>后台有了解吗  <h2 id="小结-6"><a href="#小结-6" class="headerlink" title="小结"></a>小结</h2>是个HR小哥哥，声音听起来很舒服，显然经过专业培训。<br>在经历了三天三面，完成腾讯的面试流程后，也知悉了此前美团和阿里的面试结果，所以还是很期待早日接到腾讯OC，顺利上岸的。 </li>
+<li>后台有了解吗      </li>
 </ol>
+<h2 id="小结-6"><a href="#小结-6" class="headerlink" title="小结"></a>小结</h2><p>是个HR小哥哥，声音听起来很舒服，显然经过专业培训。<br>在经历了三天三面，完成腾讯的面试流程后，也知悉了此前美团和阿里的面试结果，所以还是很期待早日接到腾讯OC，顺利上岸的。 </p>
 <p>后续：很尴尬地鸽了鹅厂，感觉太愧对一面面试官当时替自己赶进度了，也对不起他后来持续不断地跟进着我的offer进度。唉，真心希望腾讯文档越来越好~</p>
 <h1 id="网易互娱-视频面试"><a href="#网易互娱-视频面试" class="headerlink" title="网易互娱 视频面试"></a>网易互娱 视频面试</h1><h2 id="0420-14-00-50min"><a href="#0420-14-00-50min" class="headerlink" title="0420 14:00 50min"></a>0420 14:00 50min</h2><ol>
 <li>通信的，硬件应该不错吧  </li>
@@ -119,9 +130,9 @@
 <h1 id="京东一面-视频面试"><a href="#京东一面-视频面试" class="headerlink" title="京东一面 视频面试"></a>京东一面 视频面试</h1><h2 id="0422-14-40-50min"><a href="#0422-14-40-50min" class="headerlink" title="0422 14:40 50min"></a>0422 14:40 50min</h2><ol>
 <li>为什么跨专业  </li>
 <li>介绍Wi-Fi人体感知  </li>
-<li>线程的状态 变化的过程  </li>
+<li>线程的状态 变化的过程<br><a href="https://blog.csdn.net/pange1991/article/details/53860651" target="_blank" rel="noopener">CSDN博客：Java线程的6种状态及切换</a><br><a href="https://www.cnblogs.com/rouqinglangzi/p/10803194.html" target="_blank" rel="noopener">博客园：线程的状态和转换</a></li>
 <li>sleep和wait的区别 sleep会释放cpu吗  </li>
-<li>构造函数和构造代码块的区别  </li>
+<li>构造函数和构造代码块的区别  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">相同点：二者都可以对对象进行初始化。</span><br><span class="line">不同点：1.初始化内容不同：构造代码块中定义的是不同对象【共性的初始化内容】，给所有对象进行统一初始化；而构造函数是给【对应的对象】初始化。2.执行顺序不同：new一个对象后，首先执行构造代码块，后执行无参&#x2F;有参构造函数。</span><br></pre></td></tr></table></figure></li>
 <li>有参构造函数vs无参构造函数+setter方法 工厂模式的好处 </li>
 <li>构造函数结合类加载介绍一下  </li>
 <li>类加载的执行引擎是啥  </li>
@@ -169,7 +180,7 @@
 <li>海量数据TopK   </li>
 <li>一些排序算法的时间复杂度</li>
 </ol>
-<h2 id="小结-9"><a href="#小结-9" class="headerlink" title="小结"></a>小结</h2><p>没午睡的连场面试真的身心俱疲hhh，有的题莫名答错了。。。。。问了一圈后，来到了期盼已久的撕题环节。18题想了个直接搜索的思路后还想再想想其他思路，并告知了面试官。过了一会面试官说这题不用写了换一题，以为是面试官认可了我的直接搜索，可后来又冒了句：“这题算写不出来”。我：？<br>TopK又没答好。只回答了分块+堆排序。真该总结了。</p>
+<h2 id="小结-9"><a href="#小结-9" class="headerlink" title="小结"></a>小结</h2><p>没午睡的连场面试真的身心俱疲hhh，有的题莫名答错了。。。。。问了一圈后，来到了期盼已久的撕题环节。18题想了个直接搜索的思路后还想再想想其他思路，并告知了面试官。过了一会面试官说这题不用写了换一题，以为是面试官认可了我的直接搜索，可后来又冒了句：“这题算写不出来”。我os：？<br>TopK又没答好。只回答了分块+堆排序。真该总结了。<br>后续：三天不到，官网就显示“不合适”。</p>
 <h1 id="字节一面-视频面试"><a href="#字节一面-视频面试" class="headerlink" title="字节一面 视频面试"></a>字节一面 视频面试</h1><h2 id="0424-17-30-60min"><a href="#0424-17-30-60min" class="headerlink" title="0424 17:30 60min"></a>0424 17:30 60min</h2><ol>
 <li>sql设计足球赛赛程 【sorry真不会</li>
 <li>sql设计学生表的一些排序问题【sql本科学的了。。。怂怂地写了几句，面试官表示我都写对了。本菜鸡表示又惊又方了hhh<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> S.NAME <span class="keyword">FROM</span> STUDENT S <span class="keyword">WHERE</span> S.SCORE &lt; <span class="number">60</span></span><br><span class="line"><span class="keyword">SELECT</span> S.NAME <span class="keyword">FROM</span> STUDENT S <span class="keyword">WHERE</span> S.SCORE &lt; <span class="number">60</span> <span class="keyword">GROUP</span> <span class="keyword">BY</span> S.NAME</span><br><span class="line"><span class="keyword">SELECT</span> A.NAME <span class="keyword">FROM</span> STUDENT A <span class="keyword">WHERE</span> A.NAME <span class="keyword">NOT</span> <span class="keyword">IN</span> </span><br><span class="line">(<span class="keyword">SELECT</span> S.NAME <span class="keyword">FROM</span> STUDENT S <span class="keyword">WHERE</span> S.SCORE &lt; <span class="number">60</span> <span class="keyword">GROUP</span> <span class="keyword">BY</span> S.NAME)</span><br><span class="line"><span class="keyword">SELECT</span> S.NAME <span class="keyword">FROM</span> STUDENT S <span class="keyword">GROUP</span> <span class="keyword">BY</span> S.NAME <span class="keyword">HAVING</span> <span class="keyword">MIN</span>(S.SCORE) &gt;= <span class="number">60</span></span><br></pre></td></tr></table></figure></li>
