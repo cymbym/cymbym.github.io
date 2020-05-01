@@ -108,13 +108,13 @@
 <li>通信的，硬件应该不错吧  </li>
 <li>信道切换介绍下  </li>
 <li>信道切换的目的  </li>
-<li>驱动的原理  </li>
-<li>linux命令 比如free 还用过啥 用vim还是ide  </li>
-<li>redis持久化过程  </li>
+<li>驱动的原理<br><a href="https://blog.csdn.net/qq_21334991/article/details/78939340" target="_blank" rel="noopener">CSDN博客：网卡工作原理</a></li>
+<li>linux命令 比如free 还用过啥 用vim还是ide<br><a href="https://www.runoob.com/linux/linux-command-manual.html" target="_blank" rel="noopener">菜鸟教程：linux命令大全</a></li>
+<li>redis持久化过程<br><a href="https://www.cnblogs.com/xingzc/p/5988080.html" target="_blank" rel="noopener">博客园：Redis提供的持久化机制（RDB和AOF）</a></li>
 <li>操作系统的不知道啥？？？  </li>
-<li>文件描述符   </li>
-<li>socket编程  </li>
-<li>写一个java到运行会发生啥  </li>
+<li>文件描述符<br><a href="https://blog.csdn.net/qq_28114615/article/details/94590598" target="_blank" rel="noopener">CSDN：Linux中文件描述符的理解（文件描述符、文件表项、i-node）</a></li>
+<li>socket编程<br><a href="https://blog.csdn.net/kjing/article/details/6962440" target="_blank" rel="noopener">CSDN：socket文件描述符</a></li>
+<li>写一个java到运行会发生啥<br><a href="https://www.jianshu.com/p/202f6abb229c" target="_blank" rel="noopener">简书：Java类的加载机制（类加载和初始化顺序）</a></li>
 <li>网络的不知道啥子  </li>
 <li>tcp udp区别  </li>
 <li>长连接  </li>
@@ -133,12 +133,13 @@
 <li>线程的状态 变化的过程<br><a href="https://blog.csdn.net/pange1991/article/details/53860651" target="_blank" rel="noopener">CSDN博客：Java线程的6种状态及切换</a><br><a href="https://www.cnblogs.com/rouqinglangzi/p/10803194.html" target="_blank" rel="noopener">博客园：线程的状态和转换</a></li>
 <li>sleep和wait的区别 sleep会释放cpu吗  </li>
 <li>构造函数和构造代码块的区别  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">相同点：二者都可以对对象进行初始化。</span><br><span class="line">不同点：1.初始化内容不同：构造代码块中定义的是不同对象【共性的初始化内容】，给所有对象进行统一初始化；而构造函数是给【对应的对象】初始化。2.执行顺序不同：new一个对象后，首先执行构造代码块，后执行无参&#x2F;有参构造函数。</span><br></pre></td></tr></table></figure></li>
-<li>有参构造函数vs无参构造函数+setter方法 工厂模式的好处 </li>
-<li>构造函数结合类加载介绍一下  </li>
-<li>类加载的执行引擎是啥  </li>
-<li>双亲委派的作用是什么  </li>
-<li>内部类的作用 用过吗  </li>
-<li>引用类型及场景 有哪些例子  </li>
+<li>有参构造函数vs无参构造函数+setter方法 工厂模式的好处 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">构造方法只有在创建对象时才会被“系统”调用且只调用一次， 而getter和setter方法是随时可以被“对象”调用。</span><br></pre></td></tr></table></figure>
+<a href="https://www.cnblogs.com/lazyegg/p/12524073.html" target="_blank" rel="noopener">博客园：工厂模式——我有不止一个对象</a><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.可以使代码结构清晰，有效地封装变化。在编程中，产品类的实例化有时候是比较复杂和多变的，通过工厂模式，将产品的实例化封装起来，使得调用者根本无需关心产品的实例化过程，只需依赖工厂即可得到自己想要的产品。</span><br><span class="line">2.对调用者屏蔽具体的产品类。如果使用工厂模式，调用者只关心产品的接口就可以了，至于具体的实现，调用者根本无需关心。即使变更了具体的实现，对调用者来说没有任何影响。</span><br><span class="line">3.降低耦合度。产品类的实例化通常来说是很复杂的，它需要依赖很多的类，而这些类对于调用者来说根本无需知道，如果使用了工厂方法，我们需要做的仅仅是实例化好产品类，然后交给调用者使用。对调用者来说，产品所依赖的类都是透明的。</span><br></pre></td></tr></table></figure></li>
+<li>构造函数结合类加载介绍一下<br><a href="https://www.jianshu.com/p/202f6abb229c" target="_blank" rel="noopener">简书：Java类的加载机制（类加载和初始化顺序）</a></li>
+<li>类加载的执行引擎是啥<br><a href="https://blog.csdn.net/wutao1155/article/details/79340135" target="_blank" rel="noopener">CSDN：JVM的类加载和字节码执行引擎</a><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Java虚拟机规范中制定了虚拟机字节码执行引擎的【概念模型】，这个概念模型成为各种虚拟机执行引擎的统一外观：输入的是字节码文件，处理过程是字节码解析的等效过程，输出的是执行结果。</span><br></pre></td></tr></table></figure></li>
+<li>双亲委派的作用是什么<br><a href="https://www.jianshu.com/p/1e4011617650" target="_blank" rel="noopener">简书：java双亲委派机制及作用</a><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1、防止重复加载同一个.class。通过委托去向上面问一问，加载过了，就不用再加载一遍。保证数据安全。</span><br><span class="line">2、保证核心.class不能被篡改。通过委托方式，不会去篡改核心.clas，即使篡改也不会去加载，即使加载也不会是同一个.class对象了。不同的加载器加载同一个.class也不是同一个Class对象。这样保证了Class执行安全。</span><br></pre></td></tr></table></figure></li>
+<li>内部类的作用 用过吗<br><a href="https://www.cnblogs.com/uu5666/p/8185061.html" target="_blank" rel="noopener">博客园：内部类的作用</a><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.内部类可以很好的实现隐藏</span><br><span class="line"> 一般的非内部类，是不允许有 private 与protected权限的，但内部类可以</span><br><span class="line">2．内部类拥有外围类的所有元素的访问权限</span><br><span class="line">3.可是实现多重继承</span><br><span class="line">4.可以避免修改接口而实现同一个类中两种同名方法的调用。</span><br></pre></td></tr></table></figure></li>
+<li>引用类型及场景 有哪些例子<br><a href="https://www.cnblogs.com/minikobe/p/11929737.html" target="_blank" rel="noopener">博客园：java四种引用类型以及使用场景详解</a></li>
 <li>BIO和AIO区别  </li>
 <li>select和epoll区别  </li>
 <li>索引有哪些  </li>
