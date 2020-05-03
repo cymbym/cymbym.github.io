@@ -4,7 +4,7 @@
     <title>【面经】暑期实习系列</title>
     <url>/2020/04/24/%E3%80%90%E9%9D%A2%E7%BB%8F%E3%80%91%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0%E7%B3%BB%E5%88%97/</url>
     <content><![CDATA[<h1 id="2020年4月暑期实习"><a href="#2020年4月暑期实习" class="headerlink" title="2020年4月暑期实习"></a>2020年4月暑期实习</h1><h2 id="面试周期"><a href="#面试周期" class="headerlink" title="面试周期"></a>面试周期</h2><ul>
-<li><strong>【时间线】</strong>2020年4月。<br>【三月底】开始和群里的小伙伴们投非阿里腾讯字节的厂，当作试试水了。<br>【4月上旬】主要处于360、美团、网易、快手、携程等的笔试阶段（第一次笔试360就凉了真尴尬啊，携程笔试已通过一个月了还不发起面试emmm）。同时以美团的两次面试开始了自己的征程。<br>【4月13日】有了美团的积累后，这一周开始投递心仪的大厂，也迎来了第一个面试高峰：阿里一面+腾讯的三天三面。<br>【4月20日】自己太喜欢鹅了，导致这周自己非常非常懈怠，然后遭遇网易京东快手面试的暴击。随后字节的三次面试算是给自己的暑期实习之旅划上一个句号吧。</li>
+<li><strong>【时间线】</strong>2020年4月。<br>【三月底】开始和群里的小伙伴们投非阿里腾讯字节的厂，当作试试水了。<br>【4月上旬】主要处于360、美团、网易、快手、携程等的笔试阶段（第一次笔试360就凉了真尴尬啊，携程笔试已通过一个月了还不发起面试emmm）。同时以美团的两次面试开始了自己的征程。<br>【4月13日】有了美团的积累后，这一周开始投递心仪的三个大厂，也迎来了第一个面试高峰：阿里一面+腾讯的三天三面。<br>【4月20日】自己太喜欢鹅了，导致这周自己非常非常懈怠，然后遭遇网易京东快手面试的暴击。随后字节的四天三面算是给自己的暑期实习的面试之旅划上一个句号吧。</li>
 </ul>
 <a id="more"></a>
 <h2 id="准备周期"><a href="#准备周期" class="headerlink" title="准备周期"></a>准备周期</h2><ul>
@@ -143,19 +143,19 @@
 <li>BIO和AIO区别  </li>
 <li>select和epoll区别  </li>
 <li>索引有哪些  </li>
-<li>全文索引场景  </li>
+<li>全文索引场景<br><a href="https://maizitoday.github.io/post/mysql%E7%B3%BB%E5%88%97-%E7%B4%A2%E5%BC%95%E7%9A%84%E4%BD%BF%E7%94%A8%E5%8E%9F%E7%90%86%E5%92%8C%E8%AE%BE%E8%AE%A1%E4%BC%98%E5%8C%96/" target="_blank" rel="noopener">githubIO：mysql系列-索引的使用、原理和设计优化</a><br><a href="https://zhuanlan.zhihu.com/p/29367933" target="_blank" rel="noopener">知乎：Mysql索引类型与应用场景</a><br><a href="https://www.cnblogs.com/mzli/p/5795975.html" target="_blank" rel="noopener">博客园：索引的应用场景以及如何使用</a></li>
 <li>普通索引使用流程  </li>
-<li>单机事务介绍一下  </li>
-<li>并发事务如何执行的  </li>
+<li>单机事务介绍一下【之前所了解的事务即为单机事务  </li>
+<li>分布式事务如何执行的<br><a href="https://blog.csdn.net/jacksonary/article/details/78169814" target="_blank" rel="noopener">CSDN：事务和分布式事务</a><br><a href="https://blog.csdn.net/b6ecl1k7BS8O/article/details/81741182" target="_blank" rel="noopener">CSDN：分布式事务</a></li>
 <li>数据库锁知道什么  </li>
 <li>http和https区别  </li>
 <li>CA服务器做了什么  </li>
-<li>伪造CA服务器可行吗  </li>
+<li>伪造CA服务器可行吗<br><a href="https://www.cnblogs.com/wh4am1/p/6616856.html" target="_blank" rel="noopener">博客园：谈HTTPS中间人攻击与证书校验</a></li>
 <li>快排和归并原理 时间复杂度  </li>
-<li>快排和归并区别 使用场景  </li>
+<li>快排和归并区别 使用场景<br><a href="https://blog.csdn.net/mbuger/article/details/67643185" target="_blank" rel="noopener">CSDN：各类排序算法比较和应用场景</a></li>
 <li>集合了解吗  </li>
 <li>介绍下ConcurrentHashMap  </li>
-<li>红黑树 mysql为啥不用红黑树</li>
+<li>红黑树 mysql为啥不用红黑树<br><a href="https://blog.csdn.net/xiedelong/article/details/81417049" target="_blank" rel="noopener">CSDN：为什么Mysql用B+树做索引而不用B-树或红黑树</a></li>
 </ol>
 <h2 id="小结-8"><a href="#小结-8" class="headerlink" title="小结"></a>小结</h2><p>有些没用过的东西，并不能说上来例子，还是需要多翻翻源码和多上手啊。</p>
 <h1 id="快手-视频面试"><a href="#快手-视频面试" class="headerlink" title="快手 视频面试"></a>快手 视频面试</h1><h2 id="0422-16-00-60min"><a href="#0422-16-00-60min" class="headerlink" title="0422 16:00 60min"></a>0422 16:00 60min</h2><ol>
